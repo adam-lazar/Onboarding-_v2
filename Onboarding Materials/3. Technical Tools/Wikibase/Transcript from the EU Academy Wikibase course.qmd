@@ -1,0 +1,2957 @@
+# **Wikibase and Semantic MediaWiki for data-driven semantics**
+
+## 1. Video
+
+<https://www.youtube.com/watch?v=TbluVpt35V4&t=8s>
+
+so i think we can more or less formally start uh welcome to everyone here in brussels uh but also of course online i 
+
+think we have here about 20 participants physically uh with us in brussels it's a nice sunny uh 
+
+let's say uh morning data to have this workshop i think we also 
+
+have um about 40 participants uh online so it's very i would say hearthforming 
+
+to have again i would say our first hybrid event 
+
+i think after uh two years of being at the commission this is actually the first hands-on event that we can 
+
+organize with both i would say in on-site participation but also a virtual counterpart 
+
+just very important the housekeeping rules before i start with the formal introduction do know that the session is 
+
+filmed and will be repackaged as an educational resource so uh the second half will be really 
+
+based also in on the inputs of everyone but really be aware that for all of the 
+
+questions comments etc will be integrated into a video which will be 
+
+made available i think over the month of may 
+
+so perhaps before i introduce the speakers a quick word about the samick 
+
+action so we promote ah thanks 
+
+perfect technical glitch my fault 
+
+so uh i assume that many of you know the samick action but we promote i would say 
+
+the single market of data through the lens of semantic interoperability so the 
+
+samick action is embedded into digit d2 the interoperable europe unit uh within digits and we're very 
+
+happy to i would say have this first hands-on concrete workshop on community-driven 
+
+data spaces those of you who know the digital europe work program or dep as 
+
+it's known are aware that within i would say the the financing program which will be 
+
+rolled out in the years to come the data spaces play a very important role 
+
+over the last few months i think many people across sector-specific dgs but also in member 
+
+states have been asking themselves how can we go towards implementing data spaces and i think 
+
+i would say there's often an over emphasis on infrastructure on software whereas of course from the 
+
+perspective of the samick action we value tremendously the the role and the 
+
+importance of semantics i think currently in 2022 i think we want to move away 
+
+to some extent to some extent from a very 
+
+i would say very long complex entirely expert driven 
+
+ontology developments but try to explore also more community-driven 
+
+approaches i think wiki-based wiki data and semantic media wiki which will be presented today are really an excellent 
+
+example of that approach do you also know that this is only a first step in a longer process so together with our 
+
+friends alex and sven from jrc we are planning a series of three more in-depth 
+
+workshops as from september onwards to disseminate best practices and knowledge 
+
+across member states on the usage of wiki base and wiki data and semantic 
+
+media wiki so i'm super happy with the program that we put together today we really have uh 
+
+i would say the european international experts on the topic max the wilder a long time colleague and 
+
+collaborator will be taking the floor in the beginning to present the eu knowledge graph i think in the context 
+
+of cohesion or the cohesion project many of you might have already heard about 
+
+that project so max will focus on i would say the um the whole context 
+
+around wiki base possibilities uh and also sometimes the limitations with denise with denise 
+
+indeed um and then after that first presentation there will be an overview 
+
+of semantic media wiki uh by bernhard krabina an expert on the implementation of i 
+
+would say another approach which focuses more on non-structured content so it's 
+
+really i hope that today this morning will help you to understand the 
+
+in what type of context or many of you in sector-specific dgs or crest across 
+
+member states you have highly structured data you also have unstructured 
+
+data such as policy reports legislation etc very often in concrete projects there is 
+
+a gray zone where you're mixing both structured and non-structured data so i think the whole value of this morning is 
+
+to understand how you can use uh or what is the value of both wiki based wiki 
+
+data and then semantic media wiki i think we also have a participants from member states with actually user stories 
+
+to highlight in what context the which application makes the most sense 
+
+voila having said that i think i can gently start handing over the floor to to max do know that there 
+
+will be a coffee break after the the two more i would say ex cathedral presentations there will be a 10 to 15 
+
+minute coffee break and after that we start then with the actual hands-on sessions 
+
+and uh final presentation also yeah indeed sorry let's advance everything 
+
+i'm i'm super happy also with uh the presentation by uh alan from the 
+
+wikimedia deutsche who will actually sketch us out the the road map of the 
+
+years to come so when we talk about uh community-driven semantics of course 
+
+governance is extreme is extremely important and i'm super excited that alan will 
+
+share with us i would say the uh the agenda or the development agenda and the 
+
+roadmap for wiki data and wiki based towards the end so that will also be a very important part of today 
+
+so uh without further ado max thank you again for the wonderful presentation of the day and the preparation all of the 
+
+hard work which went into it and well happy that you and denise will 
+
+take the flooring indeed thank you seth i hope dennis is there on webex because it will 
+
+be a hybrid presentation both physically and remote first it's the first for me 
+
+so we will switch in the middle but i will start so hello 
+
+everyone and today i will be we will be talking about uh a 
+
+concrete uh instance of wikibase that we call the unilateral 
+
+graph but first i will introduce what is exactly wiki base probably most of you 
+
+know already so i will not uh be too long on on that part but just to 
+
+give the context and then show this concrete wiki based instance 
+
+called the hue knowledgecraft that we have built in dg connect 
+
+then i will show a concrete use case that set already mentioned cohesio which has it's a platform that has been 
+
+recently launched just not one month ago um and finally some conclusion about 
+
+this first weekly base part before moving on to semantic media wiki 
+
+so first question what is wikibase uh well you know that the wikimedia 
+
+foundation is hosting many different wikis the most well-known are 
+
+wikipedia and wiki data but there are many others as you can see and 
+
+um and there is something selected what is this 
+
+oops this is strange ah why is that selected 
+
+sorry i clicked the wrong place so wiki data of course is one of these wikis 
+
+that you probably know but uh what is wiki base actually it is the 
+
+software that is behind so originally wikibase was used only for 
+
+wiki data but progressively it has been \[Music\] decoupled and offered as an open source 
+
+software that you can set up yourself so set up your own 
+
+instance and this is how the architecture uh looks like so without going 
+
+too deep you see that there are many components there is really the core of uh 
+
+of wikibase which is a mediawiki instance with a repository to store the data 
+
+and a client an interface and the data is stored in a 
+
+relational database of mariadb and also indexed into elasticsearch with hel 
+
+which helps to to search as you type 
+
+but then there is a third storage which is a bliss graph so 
+
+on our rdf triple store that is not the native way to store the data but we 
+
+which is synchronized in real time with this query service updater and so the rdf triple store uh is 
+
+so converting all the data into rdf and you can then query it with the query 
+
+service ui which is basically a sparkle endpoint to to ask a sparkle queries about uh 
+
+over the data and then there are many extensions and 
+
+additional tools which i will not review today but the important part is really here the core and also the apis that 
+
+allow to interact with the php application the core wiki-based repository 
+
+all of this is a bit complex maybe to set up and so the good news is 
+
+that media wiki wikimedia deutschland is providing 
+
+a docker image with all these containers 
+
+already inside so that you don't have to install yourself a relational database 
+
+and then elasticsearch and then a blizzcraft triple store and so on everything is packaged in this nice 
+
+docker image and so uh if you you pull it and you run it locally or on a server 
+
+you will have all these components so the wiki base itself the mysql database the elastic search 
+
+the quick statements which is used to import uh data quickly from excel formats and so 
+
+on then the query service uh itself the proxy which okay 
+
+it's needed for for the interface and finally the ui the front end which is the sparkle 
+
+endpoint where you can write yourself some sparkle queries over the data so again it's a whole ecosystem it's a bit 
+
+complex but you don't have to worry too much about setting up all of this if you're using 
+
+the docker image provided so um quickly this is from a paper that 
+
+we wrote with dennis and also samantha lepio from wikimedia deutschland that was 
+
+presented at the international semantic web conference last year 
+
+we showed the added value or the difference between a classical traditional approach to rdf to link data 
+
+and a wiki based approach and so i just want to highlight the difference so that you have this in mind while we 
+
+go through the eo knowledge graph so you saw that 
+
+rdf is supported i mean we can query the data as rdf but it's not the native 
+
+format in a wikibase whereas in a traditional approach you would ingest the data directly in rdf here 
+
+it's more complex you need to use an api and same thing for external vocabularies you cannot out of the box 
+
+uh reuse these ontologies you have to align all the concepts with 
+
+wiki data or wiki-based properties the scalability well it depends a bit on 
+
+the triple store maybe not the most interesting parts and for the 
+
+uh for updating you cannot use sparkle the sparkle in wikibase is read-only so you 
+
+have to use the wiki-based api to ingest the data and not use sparkle 
+
+and also the data model is a rigid one so if you use wiki-based you have to 
+
+reuse the weak data data model you cannot just 
+
+have your own so it's less flexible than a more traditional approach but 
+
+there are also a lot of advantages of using wikibase 
+
+which is all the things that are provided like the visualization the interface a nice way to edit the 
+
+data both in the browser or with bots 
+
+the search mechanism that is already there with elasticsearch and the full track of changes 
+
+uh to see all the revision history which is like wikipedia style which is very nice 
+
+and a bit unclear how you would do this in a more traditional approach 
+
+so this is uh the overview now let's have a look at this particular wiki-based instance that we have set up 
+
+uh some two years ago and that is actively used 
+
+so what is it it's actually a data repository to store any structured data 
+
+about the european union so anything that would be too specific for wikidata 
+
+basically you can put some things of general interest inside wiki data but 
+
+sometimes uh if you want more flexibility uh it's easier to use your own wiki base 
+
+so it looks like this it's live you can have a look at knowledgegraph.eu 
+
+we will use it in the hands-on part also and so 
+
+why did we choose wikibase for for this knowledge graph well for 
+
+several reasons first because it's very user friendly as you can see it's 
+
+looking really like wiki data uh it's uh you can easily just edit it uh 
+
+read and so on so compared to uh to a traditional uh 
+
+rdf repository you have directly the ui anyone 
+
+even without technical knowledge can search or update it 
+
+of course it has a graph structure which is can be exploited so if you have a 
+
+concept like the european union you see that all the triples linked to 
+
+to you are there and you can exploit this graph structure in queries 
+
+and it leads to the next point it can be queried through this uh query service so 
+
+sparkle endpoint for instance here if i want the population of all european 
+
+countries member states sorted by decreasing 
+
+size of population well you saw you can write a sparkle query you need to 
+
+to to be able to to know sparkle of course but then you have very quickly in 
+
+100 milliseconds you get all of this out of the graph like you would from wikidata 
+
+\[Music\] next point is that it can be edited both 
+
+by humans and by machines so this is a very important for us you can just go 
+
+there um uh oops here i'm i'm not logged in but 
+
+uh troops in this browser yep 
+
+yeah oops okay \[Music\] 
+
+we'll show this after because i need to login inside the presentation but so you can just go there and edit it from the 
+
+browser or you can use a some programming 
+
+languages to edit and ingest data it scales very well that's a strong 
+
+point of wikibase you know that wikidata is running on wikibase and this is a very 
+
+very big knowledge graph wikidata is probably the biggest knowledge graph in the world with five 
+
+billion triples so if it's good enough for wikidata probably it will also suit your own use case 
+
+i mean in terms of scalability of course it has a full multi-lingual support like all 
+
+wiki products so you see here you have a label in english french dutch german but 
+
+you can see much more you have many many languages 
+
+and and you have the full track of changes 
+
+which is also very nice if you switch to view history here you 
+
+can see all the revisions and you can always roll back to a previous version 
+
+if there is a mistake or whatever happens 
+
+so many advantages as you can see this is why we chose wikibase 
+
+and what is in this uh new knowledge graph so currently we have different 
+
+things we have european institutions like the parliament we have countries like estonia 
+
+uh capitals like tallinn heads of states like macron 
+
+also dg's directorates generals from the the commission like dg regio here 
+
+which is working with us on the cohesio project and also buildings and so on but the 
+
+main part of this new knowledge graph is these almost 2 million projects funded 
+
+by the u by cohesion policy that we ingested into the knowledge and this is 
+
+the main use case for using wikibase because this we couldn't do it in wikidata you cannot just go to wikidata 
+
+and say hey i will import 2 million projects funded by your funds 
+
+it will not work and behind these projects you have half a million beneficiaries that are 
+
+the companies and individuals actually receiving the funds 
+
+and finally we have also other smaller use cases using the knowledge graph like 
+
+this initiative in digit where some linked data solutions all around 
+
+europe are recorded inside the graph so we could add more and more 
+
+and in the future so how do we actually import the data 
+
+you can take any structured data it can be an excel csv here a json snippet with 
+
+just some properties about an office a building with phone numbers and so on 
+
+and you need to map to model this data so to 
+
+to ingest uh something like a building we need concepts we need the concept of buildings of office but also properties 
+
+like the address opening hours uh which dg is occupying this building and so on 
+
+and the rule of thumb is always reuse the ones from wikidata if they are already 
+
+available to avoid reinventing the wheel so that's what we did we imported concepts like 
+
+office that were of course already existing properties like occupants 
+
+and we try to keep the original identifiers so to link not only to wiki data but also to as 
+
+many as possible other data sources so if you have many identifiers it makes 
+
+the data easier to to link and so to actually import 
+
+these data uh you need an api to go through the wiki-based api in php but you can use 
+
+other languages so in our case we use pi wikibot which is written in python but there are also clients 
+
+in java and javascript and so on so there are many alternatives and finally here is the result so 
+
+starting from the json now automatically we have imported this we have the building the label in 
+
+english the alternative labels it's an instant of building an office you have the coordinate location 
+
+owned by who's the what's the address and so on and so forth 
+
+and this data is understandable uh to anyone it's aligned with existing concepts it's 
+
+queryable through the sparkline point and easy to reuse and this is where 
+
+i hand over the floor to dennis okay 
+
+so um max was explaining how we import the data but one important part is also to 
+
+basically keep this data fresh and up to date and 
+
+one important thing is that for example this here is italy 
+
+in wikidata and we reuse a lot of data in wiki data and so we have the corresponding entity 
+
+in the eu knowledge graph so this year is in the eu knowledge graph italy and these two concepts are connected 
+
+so basically we first of all we reuse concept from wiki 
+
+data it is a bit like reusing items or properties from another 
+
+ontology so in this case as an ontology we use the concepts that are in wikidata 
+
+and also we need basically to maintain a connection between these concepts 
+
+so for this we use wikibase sync wikibase sync 
+
+there is a it's a free software you can access it it is a there is a github repository and 
+
+basically wiki-based sync is a tool that allows to import entities from wiki data into your local 
+
+wiki base and to keep them in sync so i'm not sure how much you are into this 
+
+wiki based ecosystem there is a tool that is called wiki based import which does more which does a similar job 
+
+but there are some main differences with wiki wiki-based sync the first of all first of all basically 
+
+every wiki-based user can run it locally in wiki-based sync you need to be the system administrator of the wiki-based 
+
+so it is much more practical to use this the other thing is that it keeps 
+
+items and properties in sync so basically imagine you have an item in wikibase and an item in wikidata and at 
+
+some point someone makes an edit in data then this edit will basically be moved to the wiki 
+
+base without basically re-importing the the whole entity and the third important point is that 
+
+the local changes are not overwritten so you have a item in wikidata and one in wikibase wikibase is basically yours you 
+
+make an edit here you add a statement or you delete a statement and this statement doesn't appear in wikidata and 
+
+when you sync basically the changes that you did locally have priority over the changes that happen in wiki data 
+
+and using this wiki based sync tool we have created a bot which basically goes to 
+
+wiki data it checks all recent changes and whenever there is a change in wikidata this is automatically 
+
+transferred into wikibase and we check this every five minutes 
+
+and in particular this means that part of the knowledge that we use in the wiki base is basically maintained by the 
+
+wikidata community and this is for example the case before 
+
+max was saying that part of the the knowledge in the graph is about buildings and we didn't reinvent the 
+
+concept of building but we take it in wiki data because it exists it is already modeled there we have it 
+
+translated in multiple languages so there is no need to reinvent knowledge that basically is already there in 
+
+wikidata there are a number of services that we provide 
+
+around the eu knowledge graph one is data exports so under 
+
+data.linkedopendata you will find dumps of the current data in turtle 
+
+like it is done in wikidata we offer the query service which is 
+
+given out of the box under query.linkedopendata.eu 
+
+here for example we have a query over the buildings of the european 
+
+commission that are imported in the eu knowledge graph rendered on the map so there is nothing special here we just 
+
+use reuse wiki-based infrastructure and we also have a question answering 
+
+system over this graph so for example you can ask buildings by dg connect 
+
+and then we basically this is all data that is coming from 
+
+from the knowledge graph so we say basically what we understood is that 
+
+these are instances of building where the occupant is the directoral general for communication networks content and 
+
+technology so you can explore the entities like this you 
+
+you have more a map view where you can see these buildings on a map and these 
+
+uh you see are connected directly to um the 
+
+the eu knowledge graph another question could be who is the 
+
+president of france it's emmanuel macron who is the director of dg connect roberto viola 
+
+yes so basically this allows not only to have the knowledge graph accessible 
+
+programmatically but also to be able to access it to users that basically do not 
+
+know sparkle in a more natural language way the main use case that is currently 
+
+ported on top of the eu knowledge graph is cohesion and the main goal of cohesion is to 
+
+guarantee transparent communication on how european funds are spent 
+
+in particularly cohesion funds and we show you this just to show you 
+
+what is possible to construct on such a wiki based instance um 
+
+so there are there is a lot of money spent in europe 
+
+on cohesion policies i don't want to go into detail in this 
+
+but basically what we do is that we import projects that are financed across the union in the eu knowledge graph and 
+
+this is a typical project this is the name of the project it is a project in poland it 
+
+it is a finance by the european union it is in poland this was how much the eu 
+
+contributed in sloti and also in euro which is the exchange rate that we use to compute these numbers what is the 
+
+total budget the co-financing rate when it started when it ended what is the beneficiary 
+
+we also have here we linked the beneficiary 
+
+with wiki data i come to this a bit later and some more technical information about these projects that 
+
+are vocabulary that is used inside of the commission and that we basically modeled 
+
+using uh wikibase so also here you see there are so this concept of project was 
+
+existing in wikidata this concept of european union was existing in wikidata but for example the concept of program 
+
+was not existing of intervention fields this particular intervention fields not existing so you see how we integrate 
+
+knowledge by both by reusing wiki data knowledge and by using local knowledge 
+
+and not only we import this project we imported them from a lot of csv and 
+
+excel sheets but also we enrich the data so we translate the project labels and description from the original language 
+
+of the country into other european countries we compute the geolocation of this 
+
+project based on the postal code or the address we use the nuts region which is 
+
+the statistical regions in the european union where these projects are basically carried out and we also link 
+
+beneficiaries to wiki data so for example here we have a translation in several languages we have 
+
+this uh that this item is contained uh in a nuts and we have information about the 
+
+nuts there is a hierarchy about on on these nuts we have this here is a very nice part so 
+
+basically the original data says that this year is the beneficiary and now you see the 
+
+uh the power of linked data so we linked this to this item in in wiki data and 
+
+now we know that it is a parish in poland which is the diocese of the roman catholic archers of krakow it was 
+
+founded in a certain year and we also have the official website of this beneficiary and these are all 
+
+information that we we didn't knew before about 
+
+about this about this entity 
+
+on top of this we created a website which is cohesion which is available under courier ropa.tu and it looks like 
+
+this so this doesn't look like wikibase at all now but it is that all the data is 
+
+coming from wikibase it allows to explore your data a project around 
+
+around data finance around europe and 
+
+especially if you click here on more basically you go to the corresponding project in the eu 
+
+knowledge graph so this is just basically another way 
+
+an application that is constructed on top of the knowledge graph and that allow you to explore this data in a more 
+
+user-friendly way to conclude we have shown how wikibase 
+
+is used as the underlying infrastructure of the eu knowledge graph we have shown you what 
+
+is the current content of the eu knowledge graph how the data is ingested how it is maintained in sync and what 
+
+are services that we offer on top of it like the export the query service and the question answering service 
+
+and finally we have shown a concrete use case that is built on top of this knowledge graph which is 
+
+cohesion we would like to thank the tourist team at dg connect the knowledge management 
+
+team at dg region and also wikimedia deutschland it would not have been possible without contributions of the 
+
+people working in all these groups and now we are happy to answer questions 
+
+if you have any thank you very much okay wonderful uh denis thanks a lot for 
+
+the very good overview together with max i see that there was a question by daniel 
+
+who was wondering in regards to the importation of data how do you make sure that the ids 
+
+say the same across wiki base and wiki data 
+
+so uh basically the the ids do not uh i'm sorry can i go 
+
+yeah sure yeah go ahead so uh there the ids are not the same across wikidata and wikibase the ids are 
+
+different and and in fact the we have our identifiers 
+
+so our identifiers are linked open data dot u slash entity slash q something so 
+
+we are not using the same name space as wiki data so 
+
+it is currently not possible to directly reuse a concept of of wiki data as it is 
+
+so we basically make a local copy but this is also not something so 
+
+strange you would also do it in a standard linked data approach because imagine that you would like to change 
+
+some data locally then it is often used in a linked data environment that 
+
+you say this item is basically the same as this one and then you basically start 
+
+attaching to your identifier which you say is the same as the external one information 
+
+yes okay it was good yes thank you that's what i thought 
+
+yeah daniel don't hesitate to take the floor or any other participant there's a question from andrea also in 
+
+the andrea would you mind taking the floor you're uh very much valued colleague from the ep 
+
+would you mind thank you hi good morning thanks a lot for the 
+
+presentation are the ontologies of vocabularies used 
+
+in the eu knowledge graph because i know that traditionally the wikibes had its own ontology and it was not 
+
+possible to reuse existing ontologies but if i'm not wrong there is a plan to 
+
+provide support in the future in wikibeast to existing ontology so 
+
+maybe you can tell anything about that or if you have any insights on how this may happen 
+
+should i go go ahead okay so basically we do not 
+
+so we do not reuse a vocabulary ontology in the traditional sense what we reuse 
+
+is basically the vocabulary that is provided by wiki data so the concept of 
+
+occupant we didn't reinvent but we took it on from wiki data so in this sense we reuse 
+
+knowledge it is not possible currently in wikibeast to reuse existing ontologies 
+
+or vocabularies in the linked open data sense there is an effort to make this or to at 
+
+least align concepts existing in the key base with external vocabularies to say 
+
+something like instance of is always same as rdf type but this is not there yet 
+
+in the hands-on session after the break i will show how you can align existing concepts with 
+
+with other vocabularies it's planned but it's true that we cannot do it uh 
+
+immediately you have to go through a weekly data item or property uh weekly basis yeah always 
+
+okay thanks a lot great thanks andrea so we have our colleague maria claudia thank you 
+
+first of all thanks a lot for organizing this event uh i have one question if i'm a public administration without a 
+
+specific expertise in semantic i would like to start using wiki data and wiki based no 
+
+which is the right approach to you know to to introduce in order to match my local 
+
+data my local knowledge with concept and i would say model that is already 
+
+existing outside which is the right approach starting from the you know from scratch because i 
+
+don't know anything about semantic how can i try to create a bridge between what is already there and 
+
+with my domain thank you 
+
+what you want to jump in or so this is oop i have this so i don't 
+
+need the mic so this is partly what we did for 
+
+cohesion because we had all of this concept pre-existing like intervention field fund program and so on 
+
+but we mostly still maps them manually there are possibilities to automate part of it 
+
+but i would say it's not so straightforward to align automatically in a high quality way what we did we use 
+
+also machine learning to align the beneficiaries for instance it's possible and we keep the link only if it's above 
+
+us some are our relevance or our confidence 
+
+threshold but i mean there is no real straightforward way to do it uh of 
+
+course yeah i don't know dennis if you want to compliment me or 
+
+so maybe in general basically imagine you you have your local data and you know what 
+
+you're speaking about like let's say tourism and then you need some concepts like restaurants and hotels and 
+
+stars and address and these ones you can go to wiki data and you can recycle and then you have some local concept that 
+
+you that you might not have uh there and then you basically introduce them in your local wiki base and then you can 
+
+start importing the data and starting modeling like this and you can do this also in a community effort like it is 
+
+done basically in in wiki data this is yeah or i would say 
+
+perfect but perhaps if i can say it in a less elegant way you would if you just have a 
+
+typical relational database you really try to analyze what are the key 
+
+reference data or the data that you want to expose towards the outside world i'm assuming that you don't just want to 
+
+copy paste everything from your backend to the web so it will very often be a limited 
+
+subset and you just kind of try to squash that into a flat file structure 
+
+and then i think it's perhaps something that we could focus on next year if you have a flat file in excel or xml or 
+
+whatever you can import it for example in an easy tool to use open refine and 
+
+open refine now has a i think a plugin yeah it's a quick statement yeah exactly 
+
+yeah do the mapping with uh wikibase uh wikidata properties i think you also 
+
+wanted to in tv hello uh i don't know about this wiki 
+
+architecture that much so maybe it would be a non-secular question but 
+
+uh how do you overview all the concepts relationships uh the properties do you 
+
+have some kind of a tool do you get some suggestions out of your 
+
+how many of those cons probably there's quite a lot of them and if you would go try not to reinvent 
+
+everything yeah absolutely a lot of times so i mean you're really nailing 
+
+uh a complex problem for kind of people who start who start with this type of project also 
+
+looking mm-hmm exactly exactly 
+
+so i don't know max or denis if you have kind of a quickly uh short recommendations on 
+
+but actually so i think the the question was 
+
+if you don't have that much wiki based wiki data experience is there an easy 
+
+way uh i would almost think of like a 
+
+visualization of the hierarchy or of the tree of concepts that you could look at 
+
+from a top to a more granular level but i don't think that there's an easy tool to 
+
+kind of in five or ten minutes walk through the key 
+
+the key hierarchy because probably most of the concepts are not necessarily well 
+
+like the whole semantic structure or the data model betw behind 
+
+wiki data it's not like a traditional thesaurus or no no it's not 
+
+a list of all properties and you can search it using elasticsearch but uh i mean but that's how we 
+
+is there a quick way to let's say if you sit down for 20 or 30 minutes is there a 
+
+document which allows you to capture the essentials of the data model 
+
+i think generally i mean and it's a bit it i think it comes more 
+
+from this wiki approach so basically you do not care of the overall 
+
+ontology so if you take wiki data there are information about stars about museums about restaurants about people 
+
+about proteins about whatever and no one has an overview oh yeah all of this and 
+
+and it is also not not the aim so basically you concentrate on what your knowledge 
+
+is locally so you go to the restaurant to you go you can for example go to a concrete restaurant instance and then 
+
+you check what are all the properties there and then you know the local schema and of course you can explore a bit in 
+
+this graph view but it is never the aim to see everything because it would be 
+
+impossible yeah thanks i think 
+
+oh wait you just need to last question maybe yeah yeah i was just gonna um answer there is an explainer on 
+
+media wiki with the data model of wikibase which i to give an idea okay like in a short sense if you could put 
+
+the link in the webex would be helpful if there is a link fantastic 
+
+ - Generated with https://kome.ai
+
+\
+
+## 2. Video
+
+<https://www.youtube.com/watch?v=DBFZ0ozB1GY&t=1s>
+
+and i see bettenhart connecting bernard welcome we would have loved to have you 
+
+with us in brussels but perhaps that will be for next year uh but welcome and thanks a lot for have 
+
+for helping us to organize this event so you will be presenting a semantic 
+
+media wiki which is more of a i would say a solution targeted to non-structured content 
+
+so voila very happy to give you uh the floor beneath and thanks again 
+
+for for your input yeah thank you very much uh very happy 
+
+to be here uh maybe a short introduction first i've actually started out as a 
+
+media wiki user and semantic media wiki user around 15 years ago 
+
+so i'm an active member of this community i have around 20 years of experience in the 
+
+public sector i used to work for an ngo called kdz 
+
+for the public sector and now i have my own company it's called knowledge management associates so we provide 
+
+knowledge management training and consulting and i'm also a knowledge graph and 
+
+semantic web researcher at vienna so i want to start by 
+
+a concrete much smaller use case i want to then explain what is semantic 
+
+media wiki and but also point out some differences and then i want to show the basic concepts how you would in semantic 
+
+media weekly reuse eu vocabularies for those of you who don't know 
+
+those of you who are working in eu institutions actually should know there is a common assessment framework 
+
+we call it cuff and this cuff is a quality management tool for 
+
+improving public sector organizations through self-assessment so it is a tool that was derived 
+
+from total quality management and efqm models and is it is it is 
+
+targeted to european public public sector organizations and is promoted by the 
+
+european public administration network so what you typically do you can see the 
+
+the model on the right you typically typically start out with the self-assessment you come together with 
+
+your um with a team to assess your organization 
+
+uh regarding those criterias you can see uh on the right hand side and out of the 
+
+self-assessment you you establish an improvement plan uh and 
+
+maybe one or two years later you you do the self-assessment again and then you there's also something like 
+
+a label for being an effective cuff user so you can apply for a label and there 
+
+are auditors who will assess whether your cuff implementation 
+
+was was uh successful so this is uh something that 
+
+is interesting for you anyway i think uh especially when you come from eu institutions 
+
+so when you look at this cuff knowledge what is the cuff knowledge about it's about general this model what is it uh 
+
+how does it work there was the the current and latest fifth revision of it is called cuff 2020. 
+
+it's also more detailed knowledge about these nine criteria and 28 sub criteria that are 
+
+evaluated in the self-assessment procedure and then of course just knowledge about 
+
+how to implement this how to do these workshops how to come up with an action plan things like that but there's also 
+
+other knowledge that is relevant who uses this currently uh in in what eu institutions 
+
+or national institutions also from the public sector who can i contact if i have questions 
+
+what tools to support this process and where can i find the best information 
+
+so and this was the basic idea actually about this uh website from from that it was 
+
+implemented by uh by kdz so the website is cuffnetwork.eu 
+
+and basically you could you could view a such a website as you know 
+
+let's make a website where the people can just read the content that we provide there 
+
+but cuff network use actually a wiki instance so it is using media wiki and semantic media wiki you would 
+
+not see that immediately because it uses a different styling 
+
+but the basic idea is that this cuff network platform the internet 
+
+surfers are also contributors so so you can you can tell others about your cuff implementation you can tell others about 
+
+what documents you you provided or training materials for example if you have some 
+
+youtube video that you did about this um or you have an electronic tool you know 
+
+this this this can be contributed and the basic idea is uh if you have a 
+
+platform where people share knowledge you don't have the webmaster who decides what goes in there and what cannot go in 
+
+there you have more the the target of a wiki gardener who tries to see what 
+
+people are contributing and you know help them find the right place to put it 
+
+so this is the main idea uh this is what it looks like it there was no web design 
+
+uh involved so this is kind of uh out of the box twitter bootstrap responsive 
+
+skin so it doesn't look like media wiki anymore but it also does not look very 
+
+fancy i must admit because there was not no no big budget behind this 
+
+so basically but what you find is you find some introduction some cuff knowledge about 
+
+about the structure of all this and and you can find at a database of 
+
+uh practice implementations and this is the important part maybe this is where semantic media wiki comes in you have 
+
+for example here you have a description of a cuff implementation in a 
+
+public administration i think in italy and you can read some some structural uh 
+
+information here what is the size of this organization what is the section the sector where it comes from one of 
+
+the results and outcomes so just you have textual descriptions and you have structured data alongside with that and 
+
+the idea is that you can sign up for a for a user account 
+
+and you can also share your experiences with this quality management tool 
+
+so this is the use case very simple actually uh not so so big as the uh as 
+
+the idea of an eu knowledge graph it's really just a a small knowledge base i would say or knowledge 
+
+graph for this cuff community or community of cuff practices so why did 
+
+we choose semantic media wiki for this well what is semantic media wiki well first it's an open source project 
+
+so you can find it online it is driven by an open source community 
+
+don't be mistaken even if it was there before wiki base and even if it was kind of in in invented by the same people 
+
+that invented than wikibase and it was partly programmed by the same people 
+
+uh it is not the case that semantic video mickey is now obsolete and now the thing to do with wiki based there are 
+
+two different approaches so we will talk about these differences today both are great software projects 
+
+uh semantic media wiki has i think it started in 2006 so it has uh then uh 
+
+established a lot of uh use inside of organizations so there are 
+
+also several com companies in austria and germany in france in in the netherlands who are 
+
+who are supporting organizations in how to use a semantic media wiki 
+
+we can we can consider it as a kind of a swiss army knife for data and semantics so it might not do everything 
+
+uh every aspect of it the best way but it's it's it's like the swiss army knife you 
+
+have a lot of opportunities that are there uh and and for many use cases this 
+
+is very uh beneficiary it is built on the media 
+
+ecosystem so it also uses mediawiki which is the software that powers wikipedia 
+
+but it enhances it significantly and it can be used for much more than just wikis so 
+
+many organizations use it internally so you cannot access it from the web or you can also put it on the web but 
+
+only users of course who have a user account can view the content so it can be 
+
+also content that is reserved only for for a specific target group 
+
+so how does this work well what's the benefit why would you use mediawiki anyway we could you could use for your 
+
+knowledge management solutions other open source content management systems you can you can use 
+
+wordpress or drupal or typo3 the power of week is really this collaborative editing because that's 
+
+what wikipedia does uh it's this already mentioned version history of every edit 
+
+that is transparent also i think very interesting is the aspect that there's no back end so in 
+
+other content management systems you have to learn your users have to learn a back end so how to write an article is it done in 
+
+the back end and then they push publish and then it's visible so there is no back end in media wiki and you have 
+
+structuring capabilities only with categories and namespaces which is quite limited actually if you just use 
+
+mediawiki and you have an api this is great so this is where semantic media wiki comes in 
+
+so you can add arbitrary structural data um you you can you can think of it uh 
+
+if you if you're not so familiar with with uh web technology you can think of it as 
+
+some kind of microsoft access so like in microsoft access there is a database 
+
+system you would you would uh define properties you you can define uh an 
+
+input form um where people can fill in these properties for certain 
+
+items uh you can do all this with semantic media wiki and this is all done within wiki pages there is a a 
+
+internal query language i will show you in a second 
+
+it supports semantic web standards so we have rdf there is a triple store support as well it has also an api 
+
+so this uh but it's not semantic media wiki alone there are several other extensions around 
+
+10 to 20 i would say that usually are used in semantic media week installations 
+
+this uh for example for further functionality like online forms for the data entry uh more visualization options 
+
+for visualizing the content you that you have just entered on an interactive timeline or on a map or whatever 
+
+uh this responsive skin i've mentioned for example some authentication plugins 
+
+image annotation plugins sparkle plugins so there is a lot of more open source extensions that not only built around 
+
+media wiki but also around semantic media wiki so what are the storage options let us 
+
+for a for a second to get a little bit a bit more technical the same is true for wiki base 
+
+everything is stored in an sql in a sql store so 
+
+mariadb or mysql or sqlite or so postgres sql is 
+
+supported so there are extra tables in this media wiki storage for semantic media 
+
+wiki you can use elasticsearch as a search engine it's not really the storage back end but 
+
+it also does the same thing that elasticsearch does for for wiki base and you can also have a sparkly uh 
+
+or rdf stores triple stores so there are connectors custom connectors and there are special connectors for vitro also 
+
+blaze graph fuseki sesame and for store so these are some 
+
+available ones and you could also try to uh to connect it to other 
+
+rdf stores basically the same is true that is true for for wikibase 
+
+it it stores the semantic semantically annotated content 
+
+also in the triple store so also here for the sparkle endpoint this is read only because the 
+
+the edit uh is done in semantic media wiki and the result is then made 
+
+available in this rdf store so there's no real difference here 
+
+what is very powerful and uh what that is a main difference is there is an 
+
+internal query language so you can see a simple example if you type on any wiki 
+
+wiki page this wiki text there's this ask parser function so it basically says i want to ask 
+
+all pages of the category practices where the property country is austria and i want to have the organization name 
+
+the coordinates and i want to format it in a table so with this simple query 
+
+in my opinion much simpler than sparkle not not as powerful of course but for the for the average user much more 
+
+simple to learn you can you can get this table on any wiki page 
+
+uh if you see ah that's interesting so really we have here a lot of of uh pages 
+
+with the organization names and with some coordinates uh inside there because we entered that our users entered it 
+
+you just need to tell uh you to change your query to form this map and you you would get on your wiki 
+
+page inside of mediawiki you get a map with with those 
+
+with with this data displayed so this is a main difference because 
+
+this internal query language is not available in wikibase so every visualization that you see in 
+
+in based on wikidata there are great great options but all of them are special 
+
+services that run outside of mediawiki and they basically mostly use the sparkly endpoint 
+
+which is fine but which is a great way to do this especially if you have large amounts of data 
+
+but for for smaller projects where you really want to to manage this data 
+
+inside your mediawiki instance and you want to provide your users different views on the data 
+
+you can do this with this internal query language so there are around of 70 different 
+
+result formats ranging from timelines or calendar formats also uh 
+
+mathematical form formats uh or gantt charts or tag clouds or json 
+
+rdf so you can also export it just with the with the same with the same 
+
+small internal query language um so where to start if you're 
+
+interested with uh to start with semantic media weekly of course go to the website uh there is 
+
+also uh some docker image around unfortunately this is now the downside 
+
+um up to now i'm not aware of any uh docker image that also contains the triple 
+
+store so um this this will be available i hope we're working on this but i'm not currently aware of any 
+
+uh docker image that you can just fire up and you have the latest semantic media wiki also with with uh with a a 
+
+triple store so this with something that we would like to have in the community we're working on this but this i think 
+
+it's not there yet uh maybe some projects you should look into that are 
+
+aiming to provide a set of bundled extensions that you just can fire up and 
+
+you have a great uh great environment one is called opencsp.org and the other is called 
+
+project canasta so you can look this up later so now let's let's go to the to the part 
+
+how do i reuse you vocabularies and this is the part also that i will show them in the in the hands-on session 
+
+in real time but just give you a general idea uh well basically what we are doing is 
+
+when we're doing uh we are linking open data right so you have you you probably 
+
+know this five star five star scheme by tim berners-lee that says okay 
+
+please make your stuff available on the web on the web in whatever format just put it in an open license that is very 
+
+very well supported by mediawiki because it is a content management system 
+
+designed to be as open as possible so that's an advantage and that you can also have 
+
+your special licensing features that's built in if you have want to have two stars it is 
+
+make it available structured data so put an excel sheet inside 
+
+instead of a pdf that has scanned tables inside them well this can be done by mediawiki of course if you upload some 
+
+excel sheet or instead of a pdf file if you if you want to use non-proprietary formats csv instead of 
+
+excel if you're not talking about uploading files but providing data in a structured 
+
+way that is exported in csv you need to have semantic media wiki for that our 
+
+example would be the list of projects of cuff implementations for all countries 
+
+you know you would you would want to download this as a csv file that can be done with semantic media wiki so we have 
+
+three stars here four stars would be you you need to use uris to denote things so that 
+
+people can point at your stuff this can be done very well in conjunction with media weekend semantic media wiki i will 
+
+i will talk about this in a second and of course you want to link your data to other 
+
+to other data to provide context again this is supported by semantic media wiki so how do you do that um well basically 
+
+you have a property page and you can just invent or declare your properties 
+
+in your media wiki you can say i have the property wiki data id it is of type text or of type 
+
+number but there's also is a special type that's called external identifier 
+
+so you basically say my property page wiki data id is of type 
+
+external identifier and it has this uri yeah this wiki data uri and this 
+
+dollar one then gets replaced by this queue number so uh 
+
+you can see an an example here uh paul the third has this q number and if 
+
+you would click now here on this item it would lead you directly to wikidata so you can easily link to external 
+
+identifiers of course there are several others you can do the same thing with orchid numbers or gnd numbers or 
+
+whatever so that's easy to link to external identifiers so the important part for today is i 
+
+think how to use external vocabularies well this is also quite simple you have 
+
+to add a page in the media wiki namespace that is reserved for 
+
+administrative users of a wiki and you would add a page like smw import fold and this this page would 
+
+have basically just a a a text inside that would that would denote this fourth 
+
+um that is for uh a friend of a friend ontology and then you could add here 
+
+vocabulary items you say i want to use for home page or fourth name and it 
+
+should be of type text or type url you add that and then you can 
+
+\[Music\] instead of doing this local data type declarations you would just say 
+
+it is imported from fourth family name because here's family name and this is 
+
+the fourth uh fourth uh vocabulary so this is 
+
+what you have to do and this would change the rdf output to use for family 
+
+name so of course there are other vocabularies that you can reuse and you can reuse any 
+
+anything because you can set this up yourself i will show this in the hands-on session also important is to know that mediawiki 
+
+supports unique ids so every page has a unique page id because the name of the page 
+
+like here in this practice could change if we want if we don't like this name we can change it but the id stays the same 
+
+so you can basically also tell your external users there is a unique idea 
+
+id that's 185 and you can provide a link and say okay if you if you ever 
+
+want to reference to our pages use this id 185 and it will always show you this page 
+
+no matter how we change the title over time okay so uh 
+
+how do we do this now if you if you look at the core public service vocabulary 
+
+i did that in the preparation for this workshop so i looked into that what kind of uh vocabulary items are there what do 
+
+we have in our in our installation we have this cuff practice as we call it 
+
+and they have an address they have a country they have a city they have an organization and a person so it's a it's 
+
+a very flat structure actually uh we have things like level of government organization 
+
+size and type a website a year and a zip code so and then you would look through the documentation what are they using 
+
+for example they have a pro property spatial they say it should be of dc terms 
+
+spatial so they are also in the public service vocabulary are reusing other vocabulary 
+
+that already exists so and here there is a 
+
+special vocabulary has com competent authority where this uri would be cv has 
+
+competent authority so and you would go through this and there is also a help 
+
+document that that will guide you through this and you basically match things spatial you could match to the 
+
+country has competent authority you could match to the organization has address you could 
+
+of course match to the address yeah and what changes basically you 
+
+really just need to change this has type your internal declaration has typed text 
+
+you would change it to hashtag imported from dc term spatial on the property page of the country this 
+
+would result in this rdf using dc terms spatial 
+
+um uh instead of uh what it would have here kind of a 
+
+property yeah property country property address so so these two do not reuse any vocabulary 
+
+they are just the properties that i invented in my uh in my media wiki installation 
+
+and the country here now reuses this external vocabulary 
+
+so it's basically as simple as that and yeah 
+
+the question is how well are these terms matching well um 
+
+the address and has address you know this is this is obvious with the city and country this is 
+
+interesting so when i use dc terms location for the country should 
+
+i also use it for the city um i don't i don't know we could discuss this 
+
+there is a description yeah we can use that \[Music\] 
+
+i actually used a doubling core description so but the public service vocabulary tells me i should use dc 
+
+terms for description so i can change that there are other for example we have a property is this organization and 
+
+has this implementation been awarded an effective cuff user yes or no so of course there is no no 
+
+no relation here into external vocabulary so we leave it as it is yeah and for others 
+
+organization function that's really the question does it really match to the to the sector or to the thematic area 
+
+vocabulary i'm not so sure so we could discuss this um organization type is 
+
+maybe nice and also this has contact point would here uh 
+
+uh we could reuse for the person so yeah basically this was it i hope i 
+
+stayed in within time i'm happy to answer any questions and we will have a look at how this is really done in in 
+
+practice in semantic media wiki then after the break so thank you 
+
+thanks a lot bernard i'm just trying to there was a question from pascal 
+
+on the uh of course there are a lot of i would say different software opportunities around this uh pascal i 
+
+think was referring to confluence i know that internally one of my colleagues is also heavily relying on drupal and the 
+
+the opportunities drupal offers to integrate semantics so bernard could you perhaps 
+
+in the larger landscape position exactly what are really the the pros and 
+
+the cons of semantic media wiki compare and also then there was a follow-up question by 
+
+pascal how easy it is actually to migrate from one platform to the other 
+
+yeah that's a interesting question uh i would say i mean i have used drupal 
+
+um not not for much semantic media uh semantic web 
+
+applications but i've experienced two things um one is that what was what i mentioned 
+
+in general that drupal users also really like in wordpress or in typo3 or in 
+
+drupal the users have to kind of learn this back end 
+
+this is not a bad thing this can be also an advantage because you can set up 
+
+some kind of data that you want to have published in two weeks and you can prepare that 
+
+in the back end so it has advantages but uh it also has this its downside so you 
+
+have to train people to do this with media wiki you you really because there is no back end you really 
+
+have to provide some kind of of entry forms for people to to to to work on the structured data 
+
+um or it should be as easy as possible because you know 
+
+you cannot train i mean you can train people to to work with wikipedia uh but uh it 
+
+uh for the beginning it has to be as easy as possible so there's one thing and the other thing i experienced two 
+
+times is this this uh upgrading the software from 
+
+let's say drupal 6 to drupal 7. many drupal experts said 
+
+independent experts it's it's so much work it's the same amount of work as doing it 
+
+all over again in drupal 8 now for drupal 9. so this major version shifts 
+
+they happened and it is really for drupal experts a large problem to 
+
+migrate these websites our oldest media wiki uh instance is 
+
+actually online still it started in two thousand i think seven or eight and it is still online i just it is it will it 
+
+is continuously up upgraded so the upgrading of this is usually it takes me half a day you know 
+
+uh it takes some time to figure out when is the right right moment to upgrade because of 
+
+course the same problem is you have extensions that might not work with the latest version of things like that but usually it's really hassle free and why 
+
+is it tesla free because basically it's only wiki text that we're working on so we're only working with wiki text 
+
+and so this is much easier regarding confluence that's a i would say totally different beast because in 
+
+confluence you conference is a wiki solution and it's i think the the largest 
+
+uh and most successful uh uh proprietary wiki software and i'm 
+
+now also a confluence user so i also i'm experiencing what's the 
+
+what's the what the benefits are and there are benefits of course so i mean they're not by by luck the one of the 
+
+of the largest wiki providers they have a great product but it's very expensive and now they want to they want to force 
+
+um users in the cloud solution so i think as of next year or so you cannot buy any 
+
+server licenses anymore so you have to move into the confluence cloud so this is one main advantage that you 
+
+with mediawiki you can install it still on premise you can have every data inside so you don't need to have any 
+
+cloud you can have it in the cloud there is of course a hosting available so that's a main difference and you 
+
+don't pay license fees right you can have as many users as you want as you want you don't pay anything 
+
+regarding migration i personally have not been involved in any of those migrations i know there is a migration 
+
+script out there that would that would take content from confluence and and 
+
+would import it in in media wiki to be honest i don't know how well it works but i know one or two companies 
+
+who have done migration projects so you can contact me and i will i will 
+
+forward the context thanks bernard perhaps i think the people here 
+
+physically in the room but also you virtually are probably in need of a coffee but before we 
+
+we go there i would like to put a flemish colleague a little bit on the spot but it seems 
+
+this is again kind of the beauty of uh meeting physically i think we 
+
+have an expert user i i would say i will just let you introduce yourself 
+
+hi good morning everybody um i'm fabian from uh vlogas so that's a 
+
+flemish open city architecture we've set up a semantic media wiki environment about two years ago 
+
+we had the opportunity of acquiring a lot of uh feedback from our users with our um environment we tried to put 
+
+a lot of people who bring a lot of people together to uh enable co-creation in a lot of projects 
+
+where um we look at the quadruple helix so that means that we're looking at a 
+
+lot of participation the participants to really bring that piece of co-creation together using a semantic media wiki 
+
+environment thanks to the feedback that we got we were able to really um 
+
+map a lot of issues or uh pinpoints uh which allowed us to 
+
+bring our environment to the next level so we really looked at what we were doing and how we 
+
+could improve and putting all of that semantic on the first place we really were able to 
+
+connect all the dots on our semantic media wiki environment so that 
+
+was a very tough challenge because we're looking at a lot of 
+
+technical concepts a lot of things that have to be described semantics bringing to the first place 
+
+but especially when we look at semantics we have a lot of links that we need to to set up so that was really complicated 
+
+and i think that refers a little bit to the question that was asked a little bit earlier how do i approach this how do i 
+
+bring my semantic together well we looking at what we are doing we're looking looking at firstly or mainly uh 
+
+architectural um elements and and terms so that would be our focus but 
+
+when we look at the bigger picture there are more things that we have to connect next to 
+
+that purely architectural um ontology and vocabulary because we don't 
+
+want to be looking at our system as solely of vocabulary providing software or 
+
+sites but we want to look at something that brings wisdom to our users yet enabling that part of co-creation that 
+
+we want to assure for everybody so um what we did is 
+
+looking at our needs and just trying to map it but mapping all that semantic is really complicated because the more you 
+
+map the more you you uh you realize that you have more things to map so you really need to 
+
+to see how you you need to do that so we tried working our way from there on and and 
+
+as we went we were able to build some kind of matrix where we really mapped okay we have that data we have to link 
+
+that data and we identified two types of links that we had to make so the first was the semantic click semantic link and 
+
+the direct link so when we have two pages for instance we have projects we have that project created in our 
+
+environment in our semantic media wiki environment okay what do we need to do to make sure that we can refer to that 
+
+project from other pages and that's where we started creating all of the links that we needed so for some pages 
+
+you have up to 10 fields that you have to fill in but the beauty is when you fill in the right fields for 
+
+instance a participating company or a specific architectural 
+
+building layer you're able to see on what projects you have used at 
+
+and really see an interlinked open uh infrastructure 
+
+and that is the beauty of it i think okay but it would be very relevant if you have any links to share with publicly available information to put it 
+
+in the webex thanks a lot bernard for uh i'd say the whole explanation and already the 
+
+overview of semantic media wiki uh we'll come back to you in the hands-on part so 
+
+i would just suggest that we have it's 10 49 that we have a 10-minute break 
+
+uh for now and that we start again at 11. yep 
+
+perfect thank you thank you 
+
+ - Generated with https://kome.ai
+
+\
+
+## 3. video
+
+<https://www.youtube.com/watch?time_continue=1&v=7AM4jpvmsyc&embeds_referring_euri=https%3A%2F%2Facademy.europa.eu%2F&embeds_referring_origin=https%3A%2F%2Facademy.europa.eu&source_ve_path=MjM4NTE&feature=emb_title>
+
+\
+
+voila welcome to the uh the second part uh which will be the real i would say uh 
+
+hands-on exercise as it's a hybrid event for uh we'll make the best out of it it's always a little bit challenging but 
+
+i think uh bednard will start will start off and then hand over back 
+
+the floor to to max so bernard giving back the floor to you 
+
+yes thank you yeah i will just try to be very brief so so maybe you 
+
+then also have you have more time for the other hands-on workshop so basically you should see the cuff 
+
+website now cuff network right and i i just want to show a how you 
+
+would really set up your first property so we imagine i will input here 
+
+you test page not just for this is typically a way to do it you know try to 
+
+search first of course i have to be logged in but then i will be offered to create the new 
+
+test page on this wiki so uh i don't want any form currently i would just slip simply on the test page 
+
+my first test page and i'm going to save this page so this is basically what an empty uh 
+
+semantic media weak installation looks like right you have media wiki and you have the capability but you don't have 
+
+any structure yet so what you can do is if i edit this again i can say 
+
+provided by bernhard you know this would be if i if i'm using 
+
+now the wiki text editor and not some kind of predefined form uh because of course this is not the way 
+
+uh it is done usually usually for your users you would provide a nice form so that they have don't have to care about 
+
+this but i i just want to demonstrate you know this more in-depth view maybe i will 
+
+make that a little bit larger even so nothing really changed there's a first test page bernhardt uh semantic media 
+
+wiki when you invent a property on the fly like i just did it will assume it is of uh it is some kind of a page 
+
+and a as a as a hint um there is in this tools bar usually when semantics installed there 
+
+is another uh option here that is called browse properties so you can look at this and 
+
+this is actually your first semantic semantic browsing opportunity so you can 
+
+see there are some some properties already there because semantic media wiki does it without any 
+
+interaction so we have a page author page creator the creation date is it a new page no 
+
+because it was edited at least one time who was the last editor what is the modification date and then here is my 
+
+property and so you can see it even works without declaring this property 
+
+but i have this red links and so it it would invite me to create this page bernard 
+
+but let's say currently i don't want to have a page for every person here i just want to have this information there so 
+
+then i would declare this property by just clicking on it and it would create a page in the 
+
+property namespace provided by let's just save that for now uh 
+
+yeah let's create a blank and what um so that's let's actually add 
+
+a hash type text this is everything i have to do 
+
+currently so now i've created a 
+
+property page and i've assigned it to data type text so why is it still red because 
+
+it takes some time to to do that and if i go back to the test page 
+
+this actually should look 
+
+in the back end 
+
+this actually should do it but it doesn't 
+
+let's look 
+
+what did i do wrong 
+
+yeah i think this was the problem so 
+
+so now uh it tells me that uh it was uh this this data type was was now provided 
+
+and if i refresh the page then it's going to do it so you can see it just it 
+
+just turned it is not a clickable anymore it is not a red link anymore 
+
+so um this is my uh my invented property on my test page now so i first 
+
+test page bernard so and if i now want to reuse a public service vocabulary 
+
+what we have to do is actually i've prepared this 
+
+i have to yeah we have to provide a page in the media 
+
+wiki namespace that looks like this i will click on the edit 
+
+button and for example i want to use this owned by so really this page only looks like this 
+
+you know this is the definition and here is a another link to the government 
+
+vocabularies that has this cv prefix so for there's another prefix i think so i 
+
+would have to do another page for this and then i look here does it have what i want here no it doesn't have it yet 
+
+because i want to use the cv owned by so i would just 
+
+say wouldn't buy and i would say it is of text of type text in this case again 
+
+oops i would save that 
+
+and now i can make use of this owned by vocabulary item in in media wiki so i go 
+
+back to my test page not on the test page it doesn't change 
+
+but i would go to the property page back where this this local declaration is done 
+
+on the provided by property and i would as i indicated in my slides i would just say 
+
+uh imported from so that's the difference uh if imported from cv 
+
+uh why i hope i have that correctly 
+
+yeah so this would tell me ah okay uh this is imported by this the government 
+
+vocabulary and if you click here you you go to this link and you can see what has been provided to be reused in in 
+
+semantic media wiki so you don't need to have everything you just have the vocabulary that you want to use there 
+
+and and if i go back to my test page 
+
+it doesn't actually change anything but if you look at the browse properties again 
+
+it will also here because also this is of data type text it will not change anything but what is different now in the rdf 
+
+uh i would now search for bernhard here and you would see here the vocabulary cv 
+
+owned by is used before that that would be just a property 
+
+property what did i call it first remember now 
+
+provided by provided by yes thank you uh so first uh this would would have said 
+
+property provided by with the label bernard and now it says this is actually the vocabulary cv owned 
+
+by because i'm reusing this so this is basically what i wanted to show you this is typically not what the 
+
+average user would do of course so if you are confused now why i have to do this manually 
+
+of course you don't because usually um you would you would do this with with 
+
+templates so uh you would not have to type provided by bernhard but you would have an edit form um 
+
+i can maybe show you this quickly if we go to the practices and click on edit then you will see how i i would 
+
+enter a new practice uh let's go somewhere uh and click on edit then you will see 
+
+i don't know if it yeah so you would have so this is what the user does right so he imports that 
+
+here organization uh information uh you know size of organization is even 
+
+not clicked in this example the contact details uh so this is what the user fills in and 
+
+behind that you would say that this email is maybe a full email or this person is of has contact point and 
+
+things like that so you would do so what i really showed you is what you would do as a semantic media wiki 
+
+uh data manager not not as the regular user but 
+
+it is interesting i think because the 
+
+you can also see what i've what what we've done here we've we've created this property um and we have we have now changed this 
+
+property so everything here is is transparent um and our eu test page didn't really 
+
+change a lot but uh in the in the backstage we really changed this uh and 
+
+if we at a later point say okay um maybe i now want to have a page about bernard 
+
+because we have so many entries that refer to up maybe it's a good idea to have a page about bernard and list all 
+
+the entries that referenced to him then we still can change this property and this is also i think uh 
+
+a main difference to to wiki base because to my knowledge if you have fixed a 
+
+a a data type here you cannot change it anymore and you can change it with semantic 
+
+media wiki it it will take a while because it it it creates jobs that in the top queue have to be 
+
+have to be uh have to be finished but then you have 
+
+your test page with the vocabulary that you want what we did not do maybe this is also 
+
+important we actually should because we this is a property and we don't have classes um we should actually 
+
+put this in a category so this is kind of the that would be the class so this owned by 
+
+i thing is uh service 
+
+so actually what we should would have to do in order to make this even better is to put this page in a mediawiki category 
+
+and on the category page we could then also say this is of uh imported from i don't know what this 
+
+is by heart now cve probably 
+
+is of class public service so yeah this is it for my demonstration and uh i'm happy to 
+
+answer questions and yeah thank you okay all right so uh thank you bernard i propose i go 
+
+ahead with uh i will show more or less the same but it wiki in wikibase and then we can take all the questions after 
+
+and the goal is really also not to monopolize the floor but to let you also intervene 
+
+and share your experience and ask questions so i will try to go through this quickly 
+
+but so um we were saying in the the previous part that there is no 
+
+quick introduction to the wiki based data model well this would be the one slide introduction of course it's basic 
+
+it's not about listing all the properties because this is impossible like dennis said but at least it gives 
+
+you an overview of what an item looks like it's the same as in wikidata but so you 
+
+have many useful concepts here first you have the label which is in a specific language uh here in english you have the 
+
+identifier which is a queue id then you have a description and the description 
+
+has a special status in wikidata wikibase so it's not 
+
+a property like any other it's a special one that is displayed here you also can 
+
+have aliases so alternative alternative names and below you have a list of statements 
+
+this is a whole statement in green a group and the 
+
+property here for instance is educated at so that's the name of the property it can be localized in any language also so 
+
+if you switch to french to dutch to whatever you will not only see the item 
+
+in the language but also the name of the properties and the values if they are 
+
+available and so here you can have \[Music\] several values here there is only one 
+
+value douglas adams was educated at st john's college that's the actual value 
+
+but then you can use qualifiers and this is a specificity of the wiki-based model so you can 
+
+qualify just okay he was at st john's college but from when to to when 
+
+in which uh major which degree and so on and additionally you can support 
+
+this fact by references which is very useful to say it's not just me who is 
+
+inventing this fact i support it with for instance the 
+
+britannica encyclopedia with an url with the language with the date with 
+
+additional properties all of them are qualifiers inside a reference and then there is 
+
+another value here actually with a few qualifiers another reference that is 
+
+collapsed actually there is no reference there and so on and then you can add 
+
+additional qualifiers additional reference additional statements this in a nutshell is how it works 
+
+in a week base so if we take again this 
+
+cp svap use case which is this quite long acronym for core public service 
+
+vocabulary application profile basically it's a model that helps 
+
+administrations around europe to describe their catalogue of services so what kind of 
+
+services they offer both to citizens around life events or a birth a death 
+
+a marriage and so on or to businesses how to create a company or to register 
+
+to the vat whatever and so this vocabulary you can find it here i will 
+
+not go through all the links this is the main page this is the github with the current version which is version 2.2.1 but very 
+
+soon the version 3 will be released it's not official yet but i think by the end of the month so 
+
+i also put the link to version 3 because it doesn't make sense to really invest time into the previous version 
+
+and this is the actual uh namespace uh if you click here you go to 
+
+the definition the classes and the properties in this 
+
+uh application profile which is derived from the vocabulary so this is a 
+
+bit complex you don't need to study and it's not very easy to see but basically it's 
+
+to show that there are many things in this vocabulary but mainly the two in blue 
+
+are the important ones the concept of public service is at the center and it's linked to the concept of public 
+
+organization and bernard mentioned this that the two are linked through the property 
+
+that is called has come competent authority so a public service is owned 
+
+or is provided by a public organization and all the rest 
+
+complements of course it's also important but we can really focus on this and the public service has three 
+
+mandatory fields it's the title the label if you want a description and 
+
+uh an identifier so and then you can add additional things like the language and 
+
+so on and same thing for the public organization you have a label and you have a spatial property that bernard 
+
+mentioned about the the location so i will not study this in detail but i 
+
+will reuse some of them and for instance if you look at the skeleton 
+
+uh are in rdf here you will see for instance that 
+
+public service is defined uh by with this uri and then we have a few 
+
+properties like the properties title which is imported from the dc terms so with so from the 
+
+doubling core metadata initiative and many other things are imported if you look at all 
+
+the prefixes that are used in cpsvip there are many some were mentioned already dc terms a 
+
+friend of a friend was used by bernard but you have other dkat more some more specific to 
+
+to the european institutions there is the ali which is a legal ontology there is 
+
+schema org scores and so on and so if you want to reuse these in wikibase you cannot 
+
+use them immediately like bernard was showing in uh in semantic media with you you cannot 
+
+import them and this is a limitation if you want of wiki based but you can still use them 
+
+it's just a workaround you need to map them with a property and so here for 
+
+instance i put a few examples if you query wikidata um 
+
+here it's a sparkle query that was prepared you i did a query to check 
+
+all the things that we have already as wikidata property and that are corresp 
+
+correspond to something in uh dc terms for instance so 
+
+create creator already exist in wikidata there is it's property 170 and so on 
+
+many concepts are already there it's just that you cannot you cannot use immediately this prefix dct you need to 
+
+use the corresponding property in wikibase same thing for schema.org 
+
+okay i show very quickly because we'll go into specific use cases so concept like works 
+
+for founder publisher and so on and so forth they exist already yeah 
+
+and just as a question is this then done systematically or is this really very 
+
+much ad hoc basically it's this ad hoc and we will see it yes unfortunately this is why 
+
+you can also do it more systematically in a weekly base or you could contribute to wikidata immediately but 
+
+this is what we will show so we need to establish the equivalence between the wikidata property and the concept if 
+
+it's not already there and for this you can use many different 
+
+concepts or properties themselves it depends and it's a bit confused in my 
+
+view in which data because there are things there is equivalent property for property equivalent class for a class 
+
+like a public service or public organization then there is the concept of exact match which is more for an item 
+
+an object we will see an example and then there is the very vague property said to be the same as but 
+
+maybe it's disputed we are not sure which is not so helpful but okay sometimes you you need this and 
+
+sometimes there is just no equivalence and this is something we saw again with bernard 
+
+the the spatial oh there is an extra s the dct spatial property uh doesn't 
+
+exist as such what we will use in wikibes wiki data is the concept the property coordinate location which is a 
+
+bit more precise it will take latitude longitude as inputs and can display a 
+
+map immediately but you cannot really link them because it's not the same granularity 
+
+okay so let's have a look at the options first equivalent property this is what i 
+
+used to to map to dc terms and to schema.org and you can take for instance title it 
+
+was the one we saw in cpsvap the first one it's a dct title 
+
+so uh in wikidata there is this property 1476 
+
+and you can use equivalent property and it's already there by the way in wikidata it says that it's equivalent to 
+
+the property dc terms title so the equivalence is already there but you could add a new one this this is what we 
+
+will do after for instance these are the things that are already there 
+
+language is this property has part and email telephone fax number 
+
+uh or others from forth as well and so on but caution label and 
+
+description they are not normal properties they have special status like i said the label 
+
+and the description are stored differently so you cannot for instance map 
+
+the description of in wikibeast to dc this term description it's uh it's not 
+
+possible so again the model is a bit rigid it's well established it's used by many 
+
+by data but you you have to know it um so you can use exact match for 
+
+instance in the english language there is a page on wiki data this is the 
+
+queue id and you can use exact match to say oh it's actually the same as this 
+
+english in a publication office vocabulary about authority filed about languages so here 
+
+you cannot really use equivalent property because it's not a property it's a queue it's not a p and 
+
+so it's a it's actually an object the language so you have to to use this and then 
+
+for the concept of public service which is a class in cpsvp so it's there there 
+
+is a concept of public service but it's defined as an instance of an indefinite legal concept so again it's 
+
+very vague it's not so well defined but you could actually 
+
+decide that this is exactly the same as a public service in cps vip which is maybe 
+
+not the case because the definition on the definition might vary but so there 
+
+is this page public service there is a concept of equivalent class that you can 
+
+use like this and it's already there but it's not linked to cpsvp it's linked to 
+
+dbpedia which is another well-known knowledge graph so let's maybe go there just 
+
+to show it in action you have public service and if you look 
+
+at equivalent class so it's already there and here you could actually just go to wikidata and add another value and 
+
+say it's also equivalent to \[Music\] the class which is 
+
+this one i can open it here uh yeah no because it's not the 
+
+the uri so i need to ah okay so you would just copy 
+
+this group copy it and go to 
+
+uh this one go here and you can add it 
+
+so this is wiki data so any one of you could do this you don't need 
+
+special rights and go here and say okay i consider that it's actually 
+
+the same it's an equivalent to this class in public service i will maybe not 
+
+do it right now but we we could consider it if you go here to the page you see that the class is 
+
+defined here so it's cpsv public service and there is a comment this class represents the 
+
+service itself a public service is the capacity blah blah blah so maybe it's not exactly the same concept but 
+
+we could consider it's equivalent and just publish it here in wikidata and then 
+
+you can reuse it but you have this in yeah 
+
+this extra step you cannot use immediately this external vocabulary 
+
+\[Music\] okay so 
+
+if we look at public services in wikidata there are only 40 of them 
+
+listed in the whole of wikidata so not a lot i put a small sparkle query listing 
+
+them and you see they are very heteroclit i mean it's a bit of 
+
+everything sometimes there is an english label sometimes not even i put also the 
+
+countries coming from all over the world sometimes the country is not specified it can be a bit 
+
+anything so it's not so well defined if we look at one particular example in 
+
+france \[Music\] so this one is not defined in english 
+
+but in french it's a central 
+
+vocational guidance center and so you see it's an instance both of vocational 
+
+guidance and public service so this could be great but if you look a bit here the information 
+
+it's you don't have a lot you know it's a decentralized service of the state you 
+
+have a short name and you know it's in france and that's about it the problem is it's not one 
+
+physical entity it's just a concept and in any city you can have this kind of 
+
+cio center so difficult to attach for instance an address or a telephone or whatever 
+
+so it's a subclass of this property the centralized service of the states and there are a few and even that is a bit 
+
+mixed you have things like the center but you also have uh dgs or ministries so it's a bit of 
+
+everything if we look at another example that is maybe more promising in spain 
+
+which is the celux which is basically an urgent cleaning service or 
+
+in case there are some chemicals or whatever so there is an english label 
+
+here you have the description in spanish it's an instance of public service you even 
+
+have a photo of the intervention truck here in madrid and here you have a bit 
+
+more you have the country and so on but you have own bay which is 
+
+interesting it links back to what we have seen also with bernard but on bai 
+
+if you we go to it again it's a bit of a vague concept it can be anything it's 
+
+owning okay about ownership uh it can be about physical objects but for a service 
+
+it's not so obvious how you can own a service you provide a service but 
+
+we should define it a bit more and so in cpsv we have this property has 
+
+competent authority which is well defined and so we could actually 
+
+use it but for this you have to create a new 
+
+property you cannot say that onday is the same as as competent authority you need to create it but to create a 
+
+property uh it's not so obvious in weak data you have then to 
+
+switch to wiki base so here uh yes okay let me go to this and just before this we can do together as a 
+
+real handsome so the also the concept of public organization 
+
+is not so well defined in wikidata you don't have it you have organization for instance the madrid cto is our 
+
+organization but not explicitly a public organization and you have other concepts like non-profit organizations public 
+
+administrations and so on and so on and it's difficult to know exactly how they 
+
+yeah they are placed each to to each other so 
+
+we have seen that we can do changes in wiki data again 
+
+avoid if if you go to wiki base avoid redefining local concepts if they 
+
+already exist try to import them and sync them from the from wiki data like we did 
+
+for the eu knowledge graph if your data could be you of public interest for anyone maybe you could 
+
+consider just injecting ingesting the data in wikidata so everyone will benefit but in some cases 
+
+if you need something very specific or you have two million projects to ingest like us or you need custom properties 
+
+which you cannot create uh yourself you need to be approved the 
+
+part of the community to create properties so if you want to do this and have more freedom then wikibase offers 
+
+this to really create your own concepts and to be 
+
+\[Music\] autonomous so here i will do an example on the eu 
+
+knowledge graph so the thing is this knowledge graph 
+
+anyone can register but by default you don't have access rights because we don't have a 
+
+community big enough to control the trolling so if if you go here but 
+
+you will still be able to to try it so here um i will just 
+
+log out again just to show there are there is the typical 
+
+login option from it's a bit small again let me so there is the login but we 
+
+added we integrated the eu login as well so if you have a it's an identifier that 
+
+anyone can create any european citizen if you go to eu login you can create 
+
+based on your email address it's used inside the institutions but you can also create one yourself and then basically 
+
+you just go here you are redirected to the eu login kind of a 
+
+cass you just type your password and then you 
+
+are logged in as a you login user inside the new knowledge graph so 
+
+here i'm recognized as a wild mac so you can do the same 
+
+basically you will be able to log in but you will have only re read any access 
+
+if you want to really try something there is a development version that is running on 
+
+dev dot linked opendata.eu it looks exactly the same but 
+
+anyone can just edit even without registering so it's based on the ip 
+
+address you can just go here i want to edit you are not logged in your ip address 
+
+will be visible and i can just go here and edit whatever or create properties so 
+
+this is for you if you want to play i don't know for how long it will be there but at least if you want to to 
+
+follow also today or you can just look at me create property link 
+
+oh yes sure it's the dev whoop 
+
+where is my webex oops it will show actually max book is in uh i think in 
+
+ten minutes yeah yeah yeah jumping to uh to allen but i think there was perhaps a 
+
+question here yeah from the audience based on what you presented okay yeah sorry uh 
+
+the microphone \[Music\] is there 
+
+no 
+
+thank you and that was very interesting i have one comment and one question 
+
+one of the comments i had was you mentioned between quotes that very vague relationship to state that one thing is 
+
+not quite equivalent but \[Music\] in a not so distant past i was working 
+
+for ireland and i was working with their data and we had a great use case for that because we had things that 
+
+represented two things at the same time so you could not use so i i 
+
+my comment would be be a little bit more careful because it is quite prevalent you need that and 
+
+there's this property called similar to by of the open vocabulary my question to you was 
+
+while you were demonstrating this um you were providing examples of well it's even 
+
+though it's not quite equivalent we can put it there etc which scares me 
+
+are are there are you aware of any initiatives for 
+
+developing and prescribing best practices and guidelines for that for public administrations 
+
+uh not sure i know in libraries and so on there is a lot of work on this but in 
+
+public administrations it's only starting and personally no i would say if you have your own wiki base then you 
+
+just create a new concept and you don't try to align with something that is not exactly the same this 
+
+what i can quickly also show here the difference between it's true that okay you have this but at 
+
+the same time if you have already public service in wikidata and you have a public service 
+
+do you really want to duplicate and to say no it's not exactly the public ser the same public service or is it more 
+
+useful to say let's try to align and decide that it's the same i don't know it's an open question 
+
+we can discuss anyone else regarding guidelines 
+
+so for for guidelines on wiki based wiki data i don't know anything specific for public constructions 
+
+uh but in general i know that's at european level through different initiatives we have been 
+
+publishing uh sometimes some guidelines so that can be a starting point but of 
+
+course we will need to see uh specifically for for wiki data and wiki based on how to apply it to make sure 
+
+that for users it's clear as from the start so maybe a point uh on us max yeah yeah 
+
+we will try to have also the return of experience of what we did for the youth knowledge graph i mean it's for the 
+
+european commission so it is a weekly base for a public administration but let's 
+
+we could uh summarize all of what we have learned and to provide some kind of guidelines to to other local 
+
+administrations i think i think chris the point that you make it could be an excellent agenda for the events that we 
+
+will be organizing the jrc from uh next year 
+
+yes 
+
+maybe i'm wrong but i'm thinking about an open street map where you have sometimes to 
+
+insert new data and you're not sure if this is the right concept or not you have a community you just post 
+
+the community it's a choice indeed so i just finished on this and then if 
+
+there are other questions so here for instance i need this competent competent authority concept it's not in wikidata i 
+
+cannot create a new property new key data like this but here i can because it's my own wiki base 
+
+so i just go here and i added a description a label in english 
+
+and here there is nothing of course i would not normally create this manually from 
+
+the browser i can do it programmatically but here i can just add a few statements say that 
+
+it's an instance of a wikibase wikibase property 
+
+ah sorry yes wiki-based property and then you see 
+
+you just save and this is the triple model so you have the object 
+
+or the property statements the here and the value here and it's saved and it's 
+
+already live and if you want to link it you can say oh 
+
+equivalent property would be \[Music\] this thing in the 
+
+here the definition oh sorry it's a bit annoying to do this in the slide 
+
+group okay so here you have the definition 
+
+in core vocabulary of has competent authority it's reused by the cps vip 
+
+and we can go here and say it's actually it's actually equivalent to this because 
+
+i defined it and now i'm sure it's the same so i save it and now i can start using 
+
+it so where we had the cellul public service the cleaning service 
+
+you know it's owned by madrid city hall but it's not so precise so now i can add a new 
+
+statement and i can reuse the property i just create it 
+
+competent authority and say that it's the madrid city hall 
+
+city hall it's here it's a local government body so it's not the house it's not the building 
+
+if you go here it's actually you go on the page in spanish it's called 
+
+i will not try to pronounce it \[Laughter\] the municipality basically 
+
+and so here i created my own const property and i added a new statement to 
+
+this service and now it's actually like using the core vocabulary but i had 
+
+to go through this extra steps that's i think that's what i 
+
+wanted to show and then we can add additional things the service is probably provided in 
+
+spanish and so on and so forth and yeah 
+
+to finish i had prepared just this to highlight a bit the differences but if 
+
+there are questions we can take them for the any questions uh through the 
+
+webex or by the people here in the yeah i have the 
+
+oh the microphone is here there is another one um yeah 
+
+one question was about the the import of all the of all the 
+
+vocabularies like dc terms and skulls and schema uh because you you you've 
+
+which each sorry with each property there there's a statement saying equivalent etc did you 
+
+like how did you import all of these uh for this are all these uh uh no because 
+
+a lot of them are already in wikidata some other people did it so i can just take them in my wiki base for free 
+
+with wikibeastsync but for the additional ones yes you have to do them to map and to do the mapping 
+
+more or less manually even though it can be in python or whatever but you still have 
+
+to do some human work and i had a second question i don't 
+
+know um because i've been in touch with the people from the ministry of culture in luxembourg who did the the cdoxier 
+
+remapping for or who are doing a cdoc crm mapping for wikibase and i don't know if you're is that also something 
+
+that you are involved with because we are trying to do uh the same thing at um 
+
+i work at the museum of photography in antwerp and we're trying to do um a similar thing and we've been in touch 
+
+with with with them uh but i was wondering if maybe you guys are also 
+
+no i heard of it but i'm not involved but it could be interesting yeah to join forces on this but probably 
+
+in the light of the continuous effort on europeana i think 
+
+the colleagues working on that will have certainly looked at kind of a mapping 
+
+with cdoc crm but i from my past life 
+
+as an academic worker on cultural heritage it is i theoretically it's wonderful but in practice it's 
+
+extremely hard to implement so from a pragmatic perspective i didn't 
+
+find cdoc crm very i would say i found a bit semantic overkill 
+
+depending on but it depends on what you need okay perhaps yeah just a takeover for 
+
+you i won't go through all of it but i think it's interesting to know there is this page 
+
+that is comparing semantic media wiki and wiki base and also cargo which is a third solution we have not 
+
+spoken about today but yes if you have more questions about the difference maybe bernard wants to also 
+
+to to push a bit more what is the difference or if not we can just go ahead with the 
+
+last presentation 
+
+with all these mappings already done uh why there are no templates that offered for users 
+
+non-technical users there are some interdependent show that a lot of queries and all that 
+
+yeah in a template i think in this open refine and with quick statements there are some 
+
+alignments that are done already but yes what we have done is available i mean 
+
+\[Music\] also on github but it's not so easy to reuse from one project to the other is 
+
+still quite custom i think yeah 
+
+ - Generated with https://kome.ai
+
+\
+
+## 4. video
+
+<https://www.youtube.com/watch?time_continue=1&v=MHACsRA0Hrk&embeds_referring_euri=https%3A%2F%2Facademy.europa.eu%2F&embeds_referring_origin=https%3A%2F%2Facademy.europa.eu&source_ve_path=MjM4NTE&feature=emb_title>
+
+\
+
+okay but i'm just looking at the time and i see that uh our friend uh alan is 
+
+also online and eager to uh intervene but perhaps if there's some time 
+
+remaining after the presentation of alan we can jump back to this slide but of course i think a lot of the questions in 
+
+regards to the mapping and the evolution through time um also refer to the whole 
+
+i would say the the challenge of governance and this is exactly also the i'll say the the value of wiki data wiki 
+
+base it's community driven and therefore we are extremely happy that alan from wikimedia foundation 
+
+deutschland is here with us today to give us a bit of a context on the the road map for the 
+
+years to come and to enlighten us a little bit in regards to the the governance process 
+
+so alan uh very happy that you're with us here today and happy to give you the floor 
+
+okay so hi everyone my name is ellen i'm the partner relationship manager for 
+
+wikimedia deutschland and today i'll be talking about the uh wikidata wiki based roadmap for this 
+
+year in this very short session uh see if i can 
+
+so from the earlier q a sessions i've observed that there are several people in the audience 
+
+who have very little technical experience or you know a wiki data wiki base so 
+
+i have some slides here for this particular group of audience and i will use layman terms non-technical 
+
+jargonists much as i can so for those of you who are pro users please be patient 
+
+with me and then you can yeah so 
+
+hang on let me see if i can change the slide yes so first off i will talk and introduce us and we give me the 
+
+deutschland followed by a quick overview of our link open data strategy as well 
+
+as the wikidata wiki-based roadmap priorities 
+
+so now wikipedia deutschland is a non-profit organization based in berlin 
+
+we are the german chapter of the global wikimedia movement and 
+
+the wikimedia foundation is our partner in the us so we work to provide more people with 
+
+more access to more knowledge so in wikipedia deutschland we have a 
+
+dedicated software development department and our role is really to ensure that we give the deutsche land 
+
+gives everyone free access to more knowledge by delivering innovative and useful open 
+
+source software so we develop and maintain wikibase so 
+
+we also develop and maintain wiki data which is run on the servers of the 
+
+wikipedia foundation so our vmda software teams build 
+
+products for large international community of users to ensure that we build the right 
+
+products these users must play a central role in our product development processes 
+
+so hence we adopt a community-centered development approach in practice this means that our 
+
+community of users inform product development and we work to ensure 
+
+transparency around our work so 
+
+since 2019 wikimedia deutschland and wikimedia foundation have been working together to publish strategy papers for 
+
+the wikidata wiki based ecosystem basically what we set up to do is to 
+
+make sure that we are very much aligned on where we want to go 
+
+to enable conversations also outside of the deutschland and the wikimedia 
+
+movement in order to enable the ecosystem to grow so generally when we talk about wiki 
+
+data and wiki-based ecosystem we always use the term structured data to explain 
+
+what we do but we realize that this is not very aligned with what other people 
+
+do outside of wiki data or wikimedia so we switch to saying that we are doing 
+
+link open data work so we hear a lot about link open data 
+
+from our earlier presenters but what does link open data means to us 
+
+right we describe the vision statement to basically have a common 
+
+goal for all activities around wikidata and wiki based ecosystem so i'll read 
+
+first and then i'll give a little bit more context on how this link open data strategy 
+
+vision aligns to what we do so in the first paragraph we work towards a future in which people 
+
+share the power to collect and organize the data that shapes humanity's understanding of the world 
+
+basically what we really want to achieve is to have a community of people not of corporations or companies 
+
+that are motivated by other things that free open knowledge but people to have the power to collect and organize the 
+
+data because data is basically a backbone for finding information for generating 
+
+knowledge so this is basically the power that people need to start with so we add the second part of the 
+
+sentence to make it clear that this is not just any data we want to collect and organize 
+
+but we want to collect and organize the data that is actually used by people to understand the world 
+
+so to basically support the creation of knowledge base that allows for fair 
+
+understanding of the world that is not distorted for other reasons so in the second paragraph diverse 
+
+communities around the world participate in wikidata and in a network-specialized weekly 
+
+basis co-creating an open and free global knowledge graph in the thriving link 
+
+open data web so this paragraph describes what we want how we want to do that 
+
+we want to have diverse communities right now we here we have a very big 
+
+community for wikidata and we are working to make that community diverse as well 
+
+but wiki data shouldn't be the only place for community we basically want to have more places 
+
+just like wiki data but with different focus points so wiki data is for general 
+
+purpose knowledge of the world and that is not the place where all data should live 
+
+so basically we have specialists for special parts of data you know such as um and this data needs ideally 
+
+their own home right for example plants video games or other topics and themes 
+
+around the world and they are also able to contribute to creating more knowledge and more 
+
+insights but also creating this layer that allows people to create apps and services that allow 
+
+people to provide more knowledge in more than just one way so what we are working together 
+
+hopefully with all of you is to create the foundation of a thriving link open data web 
+
+so in the last paragraph we say that this is the basis upon which people companies and institutions of all sizes 
+
+can generate new insights build new apps and services and change the world for 
+
+the better so we are doing this because we believe that the world is a better place if 
+
+everyone has information on their hands and this is basically what we're doing it for 
+
+you can find more information about our link open data strategy vision the link i have here 
+
+so looking at wikimedia from the media perspective the third thing that the two things that 
+
+we are doing are firstly to work on wiki data and secondly try to encourage and enable 
+
+the wiki based ecosystem as much as we can so wiki data is the knowledge base 
+
+for general purpose data it provides data but also provides 
+
+the ontology that others can use and build upon it's already a very important piece of 
+
+the link open data web but with the wiki based ecosystem and the wiki based products we are 
+
+basically aiming to extend the network and to make wiki data not the only place where data leaves 
+
+so next up i will talk about wiki data very briefly our friends and presenters 
+
+earlier on have really given extensive demonstration wiki data but just let me jump into this very briefly so you have 
+
+a better understanding so it is not possible to talk about wikibase without first talking about 
+
+wikidata you know after all wikidata is the largest wiki-based instance in the 
+
+whole wiki-based ecosystem so currently wikidata has more than 1.6 billion edits 
+
+right on our more than 97 million items over the past 10 years 
+
+now this is very significant because from the wiki data experience we have both accumulated and learned that from 
+
+the many many issues problems failures and as a result found and built many 
+
+many solutions and tools that would in turn benefit other wiki based users like yourselves 
+
+so we have three strategic priorities for wikidata in this year 
+
+the first priority is to empower the community to increase data quality 
+
+so we work to ensure that our social technical system helps editors to increase the 
+
+quality of github's existing data and contribute new high quality data 
+
+so we want to build up feedback build up feedback loops with data users 
+
+we want to work on entity schema without an integration as well as data quality and data utility processes 
+
+for example recently we have launched the mismatch finder right as a base for 
+
+setting up these feedback loops so in our second strategic priority is to 
+
+strengthen underrepresented languages so more people need access to knowledge and technology presented in their own 
+
+language and content in that language should be accessible to all language data is a fundamental building 
+
+block in reaching that goal right so as a result of this we are 
+
+working on lexicographical data user interface improvements we also want to set up wikidata software collaboration 
+
+right in order to make it easier for editors to create new lexings as well as 
+
+to set up the partnership collaboration with our various users themselves 
+
+so of course last but not least the third strategic priorities is to increase reuse for increased impact we 
+
+want to make sure that everyone and anyone can use the data in wikidata to make the world a better place now while 
+
+everyone can reuse our data we give priority to organizations and projects that align with our values and have high 
+
+impact so some of the activities that we are working on you 
+
+know is to release the rest api that we have as well as data we use this event 
+
+um that concluded last month we have 10 days data reuse these events so we invited data reusers to come in to 
+
+share the experiences with the community the editors and everyone has had a good time yeah 
+
+so we also improve documentation for data users in this strategic priority 
+
+now wikiface so i'd like to thank max for talking extensively about wikibase as well as 
+
+the advantages you know in his earlier presentation so i'll not dwell too much on what wikibase is 
+
+however what i would like to highlight is that wiki based users will have all the cool features that come along with 
+
+wikidata as well as new knowledge graph right such as some flexibility linking 
+
+databases to external \[Music\] data model external databases as well 
+
+at the same time you are able to collaborate and the data will be both human and 
+
+machine readable and of course multilinguality 
+
+so the wiki-based roadmap is essentially underpinned by three strategic priorities namely 
+
+empower knowledge curators to share their data so 
+
+in this first strategic priority we will increase the number and diversity of wiki basis that can eventually be 
+
+connected to the link open data web by enabling more projects to onboard into 
+
+the ecosystem without hiring external assistance so uh just now i've 
+
+heard and understood some members of the audience are pretty new to wikileaky base 
+
+and right now uh we i'm happy to share that we have a new product that 
+
+will be launching soon it's called wikibeast.com so i will talk about that a bit later uh a bit more later on right 
+
+so we are right now at a point in time where lots of institutions and other people are trying out weekly basis 
+
+excuse me though we do not have exact number of wiki bases we want to actually be able to create 
+
+this web of connected instances with a variety of different diverse knowledge 
+
+that is a better representation of the world so what we are doing now really is to try to support people with 
+
+the ability to share their data and the wiki base we have two main products namely the wiki base suite and 
+
+the wiki based cloud so wiki based suite suite essentially means the installation of a wiki based 
+
+instance either manually or via the docker images which i'm sure many of you here are familiar with 
+
+um and wikipedia also allows our users a long-term home for their projects so it 
+
+allows for large data sets and customizations on the platform such as 
+
+uh the example we've seen by the eu knowledge graph so wikibase cloud 
+
+is the other product that we are launching as well it has been a focus 
+
+of our product development and engineers for the past couple of months and we're excited that uh we'll be launching 
+
+anytime now so the idea of wiki-based cloud is that we want to support institutions 
+
+especially people who do not have the knowledge skills or resources 
+
+or you are not well-versed in data modeling and technology to be able to share your data and make it 
+
+collaboratively possible and accessible so 
+
+wikibase cloud is basically a wiki based as a service so instead of 
+
+you having to run your own software downloading the docker images you can set up an account with us 
+
+and just work on wiki base without having to go through any install or upgrading of processes 
+
+so we everyone still can hear me right rescue on yeah 
+
+so we we initially launched this via uh wiki-based wb stack actually the wb stack was a 
+
+volunteer-owned project that is slowly being phased out and i believe by now that some of you and every one of every 
+
+one of us is in wwe stack has received an email that you can migrate to wikibase cloud so the wb stack users 
+
+will be the first people to use wikibase cloud and once this migration is over we will also open it up to everyone else 
+
+so if you're interested to apply for early access to our closed beta version i've included a link there 
+
+and you can click on it later so while we are focusing our work on 
+
+developing and launching wiki-based cloud we are not stopping our work on a docker so we believe that there are situations 
+
+where institutions interested in doing the hosting themselves where they want to have a full flexibility and 
+
+customization ability so we're working on both these products right now and just to get it off the ground and also 
+
+extending our product management team to look at both of these at the same time 
+
+so in our first strategic priorities we also want to establish a process for 
+
+expanding the new regions and also on board new non-eu and north 
+
+american partners this is extremely interesting because a truly global linked open data requires 
+
+truly global connections and increased access to marginalized knowledge 
+
+this requires partnerships to move beyond north america and europe 
+
+so what we are really trying have been doing is began pushing into india 
+
+recently and beginning to make new connections there so we also want to formalize connections 
+
+with the community and leveraging those into the glam connections 
+
+so we are also working on wiki-based market research in order to better understand which organizations want to 
+
+use wiki-based in the future and for what purpose so we want to understand where 
+
+there is a potential for the wiki-based ecosystem to grow and how to grow both 
+
+in these existing areas as well as new areas in which there are not as any 
+
+established wiki-based projects yet so this foundational research will focus 
+
+both on researching alternatives to wiki based as well as understanding how organizations will adopt the software 
+
+so in our second strategic priority which is to enable and ecosystem we aim to enable an 
+
+ecosystem of extensions as well as tools based on the wiki-based apis to emerge 
+
+around the wiki-based software extending the functionality of the software for more use cases so our 
+
+objective really is to enable external developers to have a clearer picture of which possibilities for tools and 
+
+extensions are in line with the development of the wikipedia software so i'd like to highlight here that 
+
+there's a wiki based stakeholder group sorry excuse me there's a wiki mistake holder group are being formed and the 
+
+members of this stakeholder group includes institutional members and individuals as well the goal of this 
+
+stakeholder group is to commission production and maintenance of open source extension to wiki base so if you 
+
+are a uh a seasoned wiki based user and you have a lot of experience to share the 
+
+questions you want i would encourage you to join the keyboard stakeholder group and if you want to join wikipedia stateholder group you can reach out to 
+
+me later anytime send me an email and i can make a recommendation and refer you into the 
+
+stakeholder group so in our third 
+
+strategic roadmap priorities we want to connect data across technological and 
+
+institutional barriers so once we have set up the ecosystem and 
+
+when we have multiple communities across wiki-based instances with distinct diverse data 
+
+it is really important for us to think about how to get all these together 
+
+so i have we have made important progress on our work around what we call federation 
+
+the ability to use key data's ontology into your own wiki base and that is one of the ways on how you can continue that 
+
+route um it is not just a technical sorry it's not just a technological challenge 
+
+but it's also a social challenge for us especially on how the governance between different wiki bases look like 
+
+and how we deal with data that should be shared and data that should not be shared and so on so we are 
+
+also thinking very deep and very hard about issues like this we don't have the answers for for for 
+
+everyone right now because we are still working on it but with the community with our users i'm sure we will 
+
+eventually come up with uh something that we can share with everyone 
+
+so the wiki-based ecosystem wiki-based makes it easier than ever before to 
+
+create connect and grow collaborative link knowledge base 
+
+we are enabling the co-creation of the world's largest knowledge graph of free and open data which will be used to 
+
+create new knowledge for the world so i hope everyone will be able to join 
+
+us in this endeavor and to make knowledge more accessible to the rest of the world and for future generations 
+
+thank you thanks a lot alan thank you 
+
+perhaps a very first question from from my side would of course be 
+
+i don't know if you have set up specific collaborations with uh public authorities 
+
+in europe or north america i know that the the glam community the national libraries and archives have 
+
+been very active using or migrating some of their reference data onto your platform but 
+
+have you been in touch or are there specific use cases of 
+
+i don't know a tax authority or a 
+
+a service responsible for aggregating tourism data on a regional or a national 
+
+level do you have user stories specifically of public services who are 
+
+using wiki-based wiki data to our knowledge right now we do not we 
+
+are not aware of any public institutions we have been using a weekly base 
+
+as uh as the india projects however it doesn't mean that there aren't any partly it's because there are 
+
+many many wiki based users out there and we do not know we don't track all of them yeah and 
+
+\[Music\] i mean when you use when you download instead of giving this instance you can either have the 
+
+the data close or make it public although in our opinion we really encourage for the instance to be public 
+
+but it can't be both at this point in time you know you can't close some data and can make some data open so for wiki 
+
+based users or let's say government institutions who are using weekly basis 
+
+in their projects and have close close their data and not to share it publicly we are not aware at this point 
+
+in time what we are aware of is in the glam space in the glam space 
+
+there are many wiki based users as well as the media industry as well so 
+
+what i can do is i can find out more investigate deeper if there are other use cases that are used by the uh the 
+
+government authorities and i can probably share with everyone later on okay thanks a lot but i think as i 
+
+mentioned this is a first event in a larger series of workshops that we will organize from 
+
+september onwards in in collaboration with the joint research 
+
+council and we'll be very happy to involve you also alan if you would have availability but 
+
+are there any questions for alan here 
+
+man thanks alan for the nice presentation um i have a question about at the wikidata second priority 
+
+basically distracting of underrepresented languages um basically do you have more concrete 
+
+information on how you plan to tackle this and um in relation to it have you also maybe 
+
+discussed or or tried to collaborate with existing european initiatives on this front like the european language 
+
+equality project um which is a horizon 2020 project if i'm not mistaken and also we are 
+
+involved in a theft telecom project um basically it's called the national language technology platform which 
+
+will be tackling low resource languages um like maltese we come from malta there's 
+
+lesbian there's estonian icelandic and also croatian because i think collaboration with such 
+
+initiatives might be very valuable to maybe help even 
+
+tackle and reach this priority 
+
+uh indeed thank you very much for your question or suggestion uh we give you the deutsche actually we want to create 
+
+new partnerships with other different partners to start sharing responsibilities and resources for computer software development 
+
+and we're discussing possible partnerships with interested groups as well and we are very open to set up a 
+
+partnership as well as the necessary infrastructure and paperwork for this right this is part of our 
+
+strategic priorities in the roadmap for this year and we also want to work with partners 
+
+to you know commit to the plan software collaboration as well as all contractual financial documents so to set up a 
+
+necessary infrastructure for a software team also to start their work in another movement organization 
+
+so yes uh short answer to your question is yes we are very keen to work on this 
+
+for some for more formal structure on the soft machine software collaboration 
+
+agreements for other partners in order to strengthen the 
+
+underrepresented languages thanks for that yeah that's very reassuring thanks 
+
+any other question yes very soon 
+
+hi alan thank you for the presentation i was wondering if you plan to invest 
+
+some effort on the reuse of data story in wikibeast like in a graphical user 
+
+interface like for people without sparkle 
+
+skills and how we can reuse them in a more user-friendly way 
+
+at this point in time we we haven't thought really hard about this because our engineering 
+
+and product team are really furiously working uh to to launch the wikibeast cloud um 
+
+especially for for for users who have no technical knowledge and who doesn't have any uh 
+
+data modeling experiences we would strongly encourage you to um to join and sign up for wiki-based cloud 
+
+just to start off because that is really our main intention right to have a product that will enable 
+
+a new wiki based users who have no technical knowledge to come on board 
+
+so if you do not have that experience and background we strongly welcome you to sign up and to join us in wikibeast 
+
+cloud so you get a nice feeling about how it works um yes possibly after after the after we 
+
+launched the gps cloud and we managed to solve some of the initial problems and feedback probably i think 
+
+that at least it's fourth quarter or first quarter next year we will look into other issues but i would strongly also also strongly encourage you to join 
+
+the wikipedia stakeholder group because the stakeholder groups members they work together to 
+
+look into some of the other problems and issues that they have and the shared experiences and they even 
+
+work together to develop certain extensions you know we also launched workshops with the members as 
+
+well just to show our support and to be part of the community so 
+
+again a long answer to your question so i hope that i've answered the question 
+
+yes thank you thank you one more question i think there's one more question on the eu 
+
+knowledge graph for max yes i was uh questioning myself whether 
+
+when you need a local instance and when you connect your local data to the eu knowledge graph like coisio 
+
+for instance they won't then we don't need local instances maybe or maybe not on the short term 
+
+local interests also say for the netherlands that you have your own wiki base instance in the netherlands and say 
+
+well we create our own environment but we can also add our local data to your 
+
+knowledge so so what are the criteria yes currently 
+
+indeed we started with a small pilot and then 
+
+coisio came and it was an internal european commission use case so we took it on board and currently we 
+
+don't have a strategy to to use it i mean for new projects from 
+
+outside the commission but it's something yeah it could be interesting we are already collaborating 
+
+for koizu with the managing authorities in the member states but this is specifically on the scope of coisio 
+
+if yeah currently we don't have this kind of wiki base as a service like wikipedia 
+
+the cloud will provide i see the the point and added value but 
+
+it's a matter of resources we are quite small team cohesio is taking almost hour 
+
+all of our time but we could maybe think of new ways to reuse the 
+
+infrastructure and let you ingest the data so open for discussion but currently 
+
+it's not in place 
+
+i wanted only to add that is maybe possibility for your big data infrastructure to involve in this 
+
+project in the future we're just discussing before that you 
+
+know to evaluate if it could be a good idea to introduce as a building block as a software component in the big data 
+
+test infrastructure the wiki based instance but we need to evaluate maybe this could 
+
+be yes for free so you know every public administration could try to play a little bit also to 
+
+start a pilot on this yeah and work on documentation and yes definitely yeah our community 
+
+uh i see that people are getting hungry in the room and uh it's very nice to again have the concept 
+
+of free lunch and network networking events 
+
+but are there any last questions unfortunately my laptop died so i don't see the webex chat 
+
+florio do you see if there are any questions okay well alan max bernard 
+
+thanks a lot for your input and your interventions looking forward to future collaborations 
+
+i think this was a very first i a very successful first event there are a lot of open standing questions 
+
+that need to be tackled uh but thank you to all of the participants and 
+
+we will provide a well-packaged video which will be kind of presented as a learning material 
+
+in the interoperability academy i think probably this will be made 
+
+available over the course of the month may so all of the contents that you have 
+
+seen today and also for those who weren't able to assist will be made available 
+
+starting from may but we will provide some dissemination on that later onwards 
+
+everyone enjoy your lunch and looking forward to more uh collaboration and discussion in the uh months to come bye 
+
+thank you thank you everyone so thank you bye 
+
+\

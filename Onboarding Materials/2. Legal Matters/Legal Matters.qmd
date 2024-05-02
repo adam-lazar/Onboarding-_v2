@@ -1,0 +1,11 @@
+# Welcome!
+
+This document is divided into two parts:
+
+1.  **Information Regarding Your Contract and NDA with Reprex**: This section is designed to also familiarize you with the basic workflows of GitHub.
+
+2.  **Guidance on Setting Up a Self-Employed Legal Status in Hungary and Managing Invoices and Taxes Correctly**: As this pertains to Hungarian law, this chapter will be presented in the Hungarian language.
+
+    ## 1. Information Regarding Your Contract and NDA with Reprex
+
+    ## 2. Guidance on Setting Up a Self-Employed Legal Status in Hungary and Managing Invoices and Taxes Correctly

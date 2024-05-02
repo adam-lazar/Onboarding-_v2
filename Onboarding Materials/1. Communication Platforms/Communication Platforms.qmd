@@ -1,0 +1,31 @@
+# Welcome
+
+In this document, you can find relevant information about our communication platforms: keybase, company email addres, google calendar, todoist.
+
+## Keybase
+
+Keybase is a very neat, simple, lightweight team management/chat / social networking application that is extremely focused on privacy, security and encryption.
+
+1.  Download & install Keybase from <https://keybase.io/> on your computer.
+
+2.  Create yourself a professional login name – similar to a professional github account, a professional email, etc. (!you cannot change the name afterward!)
+
+3.  Once you log in to the computer, go to *Devices*, and *Create a paper key*. Write this on paper, or print it, and store it somewhere very safe (not near your computer). This is to recover the access in case you lose access to all your devices.
+
+4.  You can use Keybase simultaneously on multiple devices – Install Keybase on your smartphone, tablet or any other device. You will be guided through installation & paired with your computer.
+
+5.  Shall you need them, you have *two recovery options*: the paper key and your smartphone. If your smartphone breaks down and needs a replacement, you can add from your computer your new phone and deactivate the old one.
+
+6.  Once you are in, look up `antaldaniel` and `adam_lazar`
+
+7.  After a handshake we will assist your smooth transition, help you find ways to our shared files, your project’s files, and set up filters, so you are not flooded with information, while never left out, unless you choose to.
+
+## Company Email Address
+
+1.  You are g
+
+<!--# Tasks for us to complete_-->
+
+## Todoist
+
+## Google Calendar
