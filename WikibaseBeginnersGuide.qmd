@@ -18,7 +18,7 @@ In Wikibase, you'll need to think of your data in terms of the concepts Wikibase
 
 [^wikibasebeginnersguide-2]: <https://www.mediawiki.org/wiki/Wikibase/Introduction_to_modeling_data>
 
-![](images/clipboard-518516557.png)
+![](png/wikibase/clipboard-518516557.png)
 
 #### Item
 
