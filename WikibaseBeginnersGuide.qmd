@@ -1,3 +1,24 @@
+---
+title: "Wikibase Beginners Guide"
+papersize: A4
+format:
+  html: 
+    toc-depth: 3
+  epub: default
+  docx: 
+    toc-depth: 3
+  pdf:
+    colorlinks: true
+    latex: 
+       - lof: true
+editor: visual
+toc: true
+lang: en-GB
+bibliography: 
+ - bib/wikibase.bib
+
+---
+
 ## Preamble
 
 This guide is aimed at helping anyone start using Wikibase and in conjunction its biggest instance Wikidata. The guide uses images and examples mostly from a local MediaWiki/Wikibase instance, however, some images are taken from Wikibase's own documentations (these are cited as well).
@@ -82,3 +103,10 @@ With this let us continue to the practical side of this guide. In the next chapt
 Depending on the type of the MediaWiki instance in use, you may need to create an account if you want access the site. This can vary as there several options that control the "publicness" of a MediaWiki (and in turn the Wikibase instance connected to it).
 
 If we visit our [Sandbox](https://reprexbase.eu/sandbox/index.php?title=Main_Page)
+
+
+## Further references
+See for further reading. [@rossenova_wikidata_2022]
+
+## References
+
