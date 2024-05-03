@@ -18,13 +18,13 @@ In Wikibase, you'll need to think of your data in terms of the concepts Wikibase
 
 [^wikibasebeginnersguide-2]: <https://www.mediawiki.org/wiki/Wikibase/Introduction_to_modeling_data>
 
-![](png/wikibase/clipboard-518516557.png)
+![](png/wikibase/wikibaseConcepts_items_properties_statements.png)
 
 #### Item
 
 An *item* is an individual entity in Wikibase, identified by its ID starting with the letter "Q" (QID), and described by its *label* and *description*. It is important to note that QID values are assigned automatically by the software, and it is something **that you cannot change**. This means that you cannot directly assign a QID of your choice nor you can modify it after creation. Aliases can also be defined for an item which are alternate names for your item, e.g. nicknames or abbreviated forms.
 
-![](images/Slide1.png)
+![](png/wikibase/taylorSwift_q26876_exampleItemDiagram.png)
 
 ::: callout-note
 In this illustration we see the item *Q26876* from Wikidata[^wikibasebeginnersguide-3]. This item has the *label* Taylor Swift and the description *American singer-songwriter (born 1989)*. As we move on with the concepts later in this guide, this image will be referred as an example.
@@ -40,7 +40,7 @@ Properties are bit more complicated in their detail than items in that they can 
 
 First and foremost, let us look at a blank property in its own:
 
-![](images/clipboard-2545604313.png)
+![](png/wikibase/blankProperty.png)
 
 We see, that just like items, properties also use a *label*, *description* and *aliases* field. However they contain an additional — and mandatory — field: *Data type*, more on that in a tiny bit later. Properties — just like items — also have their own IDs. However property IDs start with the letter "*P* " (*PID*). This way simply looking at an ID we can instantly recognize whether that belongs to an item or a property.
 
@@ -67,7 +67,7 @@ Let us consider the most ubiquitous property in Wikibase: *instance of* (P31)[^w
 
 [^wikibasebeginnersguide-4]: <https://www.wikidata.org/wiki/Property:P31>
 
-![](images/clipboard-2645807019.png)
+![](png/wikibase/propertyP31_instanceOf.png)
 
 As we can see, this property has the *PID* P31, the *label* "instance of", the *description* "that class of which..." and importantly the *data type* item (and also *aliases* written below the description in grey, divided by the '\|' character). The item data type is one of the most used forms of properties, and as such, it is useful to know how it works. Item type properties work like pointers, in the sense that their value is the ID of an item. For example in the case of our previous example of Taylor Swift, we can see that the **Taylor Swift** is an *instance of* a **human**. In Wikibase terminology, item **Q26876** (Taylor Swift) has the property *instance of* with value of **Q5** (human). As we can see, "human" here is not only a label, text or string, but another **item** in our database quite like the item Taylor Swift itself is.
 

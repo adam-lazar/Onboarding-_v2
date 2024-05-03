@@ -1,0 +1,1 @@
+This folder Contains all bibliography: used citations, data used, visualisation used, datasets created, visualizations created, public text document outputs created.
