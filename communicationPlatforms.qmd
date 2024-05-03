@@ -1,3 +1,11 @@
+---
+title: "legalMatters"
+format: html
+editor: visual
+project:
+  output-dir: docs
+---
+
 # Welcome
 
 In this document, you can find relevant information about our communication platforms: keybase, company email addres, google calendar, todoist.

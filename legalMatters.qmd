@@ -1,3 +1,11 @@
+---
+title: "legalMatters"
+format: html
+editor: visual
+project:
+  output-dir: docs
+---
+
 # Welcome!
 
 This document is divided into two parts:
@@ -8,4 +16,36 @@ This document is divided into two parts:
 
     ## 1. Information Regarding Your Contract and NDA with Reprex
 
-    ## 2. Guidance on Setting Up a Self-Employed Legal Status in Hungary and Managing Invoices and Taxes Correctly
+To onboard, you need to sign an NDA (Non Sisclosure Agreement) and a Contract with Reprex. Through this process you will also learn the basic workflows of Github, such as forking, cloning, commiting, pushing and pull requesting.
+
+The process for both documents:
+
+1\. Acces [this repository.](https://github.com/Eviota/NDA)
+
+2\. Fork/Clone this repository.
+
+3\. Through Github Desktop clone your fork to your local computer.
+
+4\. Fill the documents with your relevant data.
+
+5\. Commit the changes.
+
+6\. Push/Pull request the changes for the documents.
+
+7\. Wait for Feedback (RepRex will check your data and fill theirs)
+
+8\. Download the updated documents.
+
+9\. Sign the documents.
+
+1\. Push/Pull request the changes for the documents.
+
+2\. Wait for Feedback (RepRex will sign the documents).
+
+3\. All done, now both parties can access the filled and signed documents.
+
+Now let's see in details:
+
+```         
+## 2. Guidance on Setting Up a Self-Employed Legal Status in Hungary and Managing Invoices and Taxes Correctly
+```
