@@ -6,7 +6,7 @@ In this document, you can find relevant information about our communication plat
 
 Keybase is a very neat, simple, lightweight team management/chat / social networking application that is extremely focused on privacy, security and encryption.
 
-1.  Download & install Keybase from <https://keybase.io/> on your computer.
+1.  Download & install Keybase from <https://keybase.io/> on your computer.
 
 2.  Create yourself a professional login name – similar to a professional github account, a professional email, etc. (!you cannot change the name afterward!)
 
