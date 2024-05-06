@@ -38,13 +38,13 @@ In Wikibase, you'll need to think of your data in terms of the concepts Wikibase
 
 [^2]: <https://www.mediawiki.org/wiki/Wikibase/Introduction_to_modeling_data>
 
-![](png/wikibase/wikibaseConcepts_items_properties_statements.png)
+![](png/wikibase/wikibase-concepts_items_properties_statements.png)
 
 #### Item
 
 An *item* is an individual entity in Wikibase, identified by its ID starting with the letter "Q" (QID), and described by its *label* and *description*. It is important to note that QID values are assigned automatically by the software, and it is something **that you cannot change**. This means that you cannot directly assign a QID of your choice nor you can modify it after creation. Aliases can also be defined for an item which are alternate names for your item, e.g. nicknames or abbreviated forms.
 
-![](png/wikibase/taylorSwift_q26876_exampleItemDiagram.png)
+![](png/wikibase/taylor-swift_q26876_example-item-diagram.png)
 
 ::: callout-note
 In this illustration we see the item *Q26876* from Wikidata[^3]. This item has the *label* Taylor Swift and the description *American singer-songwriter (born 1989)*. As we move on with the concepts later in this guide, this image will be referred as an example.
@@ -54,13 +54,13 @@ In this illustration we see the item *Q26876* from Wikidata[^3]. This item has t
 
 #### Properties
 
-We have seen that our most basic data entities in Wikibase are items. That said items in themselves are quite *empty* or one could even *shallow* in their representation. This is where properties come into the picture. In Wikibase, properties are additional types of data that are used to describe different aspects of a given item. An item's own fields (QID, label, description, aliases) are not really useful for more than simply identifying the given item, however they do not tell us much about the given item. Properties are used for that.
+We have seen that our most basic data entities in Wikibase are items. That said items in themselves are quite *empty* or one could even say *shallow* in their representation. This is where properties come into the picture. In Wikibase, properties are additional types of data that are used to describe different aspects of a given item. An item's own fields (QID, label, description, aliases) are not really useful for more than simply identifying the given item, however they do not tell us much about the given item. Properties are used for that.
 
 Properties are bit more complicated in their detail than items in that they can have various datatypes, and when used can additional qualifiers and references. Fear not, we will tackle them step by step.
 
 First and foremost, let us look at a blank property in its own:
 
-![](png/wikibase/blankProperty.png)
+![](png/wikibase/blank-property.png)
 
 We see, that just like items, properties also use a *label*, *description* and *aliases* field. However they contain an additional — and mandatory — field: *Data type*, more on that in a tiny bit later. Properties — just like items — also have their own IDs. However property IDs start with the letter "*P* " (*PID*). This way simply looking at an ID we can instantly recognize whether that belongs to an item or a property.
 
@@ -87,7 +87,7 @@ Let us consider the most ubiquitous property in Wikibase: *instance of* (P31)[^4
 
 [^4]: <https://www.wikidata.org/wiki/Property:P31>
 
-![](png/wikibase/propertyP31_instanceOf.png)
+![](png/wikibase/property-P31_instance-of.png)
 
 As we can see, this property has the *PID* P31, the *label* "instance of", the *description* "that class of which..." and importantly the *data type* item (and also *aliases* written below the description in grey, divided by the '\|' character). The item data type is one of the most used forms of properties, and as such, it is useful to know how it works. Item type properties work like pointers, in the sense that their value is the ID of an item. For example in the case of our previous example of Taylor Swift, we can see that the **Taylor Swift** is an *instance of* a **human**. In Wikibase terminology, item **Q26876** (Taylor Swift) has the property *instance of* with value of **Q5** (human). As we can see, "human" here is not only a label, text or string, but another **item** in our database quite like the item Taylor Swift itself is.
 
@@ -101,7 +101,34 @@ With this let us continue to the practical side of this guide. In the next chapt
 
 Depending on the type of the MediaWiki instance in use, you may need to create an account if you want access the site. This can vary as there several options that control the "publicness" of a MediaWiki (and in turn the Wikibase instance connected to it).
 
-If we visit our [Sandbox](https://reprexbase.eu/sandbox/index.php?title=Main_Page)
+1. Access [Reprex's Sandbox Environment.](https://reprexbase.eu/sandbox/index.php?title=Main_Page)
+
+2. On this page select **Requess Account**.
+
+![](png/wikibase/request-account_1.png)
+
+3. On the next page type in your chosen **username** and your **email address**. For a username use a professional one, similar to what you use on Keybase, Github, etc. Then confirm by clicking **request account** again. 
+
+![](png/wikibase/request-account_2.png)
+
+4. Check now your email inbox, you should recieve an email with a confirmation link. Click on this confirmation link. 
+
+![](png/wikibase/request-account_confirmation-email.png)
+
+5. After you confir your account request, the admins will evaluate it. Then you will receive another email with your login credentials, including your temporary password. 
+![](png/wikibase/request-account_email-with-temporary-login-credentials.png)
+
+6. Visit the sandbox page again and log in. On the login page type your username and the temporary password you received, then click **Log In**. It will take you automatically to the next page, where you have to change your password by typing your new permanent password. Provide your new password then confirm it. 
+
+![](png/wikibase/request-account_log-in-page.png)
+
+7. All done, you are now logged in to your personal account.
+
+![](png/wikibase/request-account_logged-in.png)
+
+
+
+
 
 ## Further references
 
