@@ -1,9 +1,19 @@
 ---
-title: "legalMatters"
-format: html
+title: "Legal Matters"
+papersize: A4
+format:
+  html: 
+    toc-depth: 3
+  epub: default
+  docx: 
+    toc-depth: 3
+  pdf:
+    colorlinks: true
+    latex: 
+       - lof: true
 editor: visual
-project:
-  output-dir: docs
+toc: true
+lang: en-GB
 ---
 
 # Welcome!
@@ -44,8 +54,14 @@ The process for both documents:
 
 3\. All done, now both parties can access the filled and signed documents.
 
+<!--- komment --->
+
 Now let's see in details:
+
+\<!--- komment ---
 
 ```         
 ## 2. Guidance on Setting Up a Self-Employed Legal Status in Hungary and Managing Invoices and Taxes Correctly
 ```
+
+\##
