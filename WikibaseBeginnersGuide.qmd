@@ -116,6 +116,7 @@ Depending on the type of MediaWiki+Wikibase instance you are using, you may need
 ![](png/wikibase/request-account_confirmation-email.png)
 
 5. After you confirm your account request, the administrators of the Wikibase instance will evaluate it. Then, you will receive another email with your login credentials, including your temporary password. 
+
 ![](png/wikibase/request-account_email-with-temporary-login-credentials.png)
 
 6. Revisit the sandbox page and log in. On the login page, type your username and the temporary password you received, then click **Log In**. You will be automatically taken to the next page, where you must change your password by typing your new permanent password. Provide your new password, then confirm it. 
