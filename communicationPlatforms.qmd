@@ -1,9 +1,19 @@
 ---
-title: "legalMatters"
-format: html
+title: "Communication Platforms"
+papersize: A4
+format:
+  html: 
+    toc-depth: 3
+  epub: default
+  docx: 
+    toc-depth: 3
+  pdf:
+    colorlinks: true
+    latex: 
+       - lof: true
 editor: visual
-project:
-  output-dir: docs
+toc: true
+lang: en-GB
 ---
 
 # Welcome
@@ -36,4 +46,4 @@ Keybase is a very neat, simple, lightweight team management/chat / social networ
 
 ## Todoist
 
-## Google Calendar
+## 
