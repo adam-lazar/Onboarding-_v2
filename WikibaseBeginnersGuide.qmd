@@ -99,33 +99,32 @@ With this let us continue to the practical side of this guide. In the next chapt
 
 ### Creating an account and logging in
 
-Depending on the type of the MediaWiki instance in use, you may need to create an account if you want access the site. This can vary as there several options that control the "publicness" of a MediaWiki (and in turn the Wikibase instance connected to it).
+Depending on the type of MediaWiki+Wikibase instance you are using, you may need to create an account to access the site. The process may be less or more strict, depending on how much private data the instance holds. The Reprex Sandbox has the following procedures.
 
 1. Access [Reprex's Sandbox Environment.](https://reprexbase.eu/sandbox/index.php?title=Main_Page)
 
-2. On this page select **Requess Account**.
+2. On this page, select **Requess Account**.
 
 ![](png/wikibase/request-account_1.png)
 
-3. On the next page type in your chosen **username** and your **email address**. For a username use a professional one, similar to what you use on Keybase, Github, etc. Then confirm by clicking **request account** again. 
+3. On the next page, type in your chosen **username** and your **email address**. For a username, use a professional one that is similar to what you use on Keybase, Github, etc. Then confirm by clicking **request account** again. 
 
 ![](png/wikibase/request-account_2.png)
 
-4. Check now your email inbox, you should recieve an email with a confirmation link. Click on this confirmation link. 
+4. Check your email inbox now. You should receive an email with a confirmation link. Click on this confirmation link. (The machine-generated email may easily go to the spam box.)
 
 ![](png/wikibase/request-account_confirmation-email.png)
 
-5. After you confir your account request, the admins will evaluate it. Then you will receive another email with your login credentials, including your temporary password. 
+5. After you confirm your account request, the administrators of the Wikibase instance will evaluate it. Then, you will receive another email with your login credentials, including your temporary password. 
 ![](png/wikibase/request-account_email-with-temporary-login-credentials.png)
 
-6. Visit the sandbox page again and log in. On the login page type your username and the temporary password you received, then click **Log In**. It will take you automatically to the next page, where you have to change your password by typing your new permanent password. Provide your new password then confirm it. 
+6. Revisit the sandbox page and log in. On the login page, type your username and the temporary password you received, then click **Log In**. You will be automatically taken to the next page, where you must change your password by typing your new permanent password. Provide your new password, then confirm it. 
 
 ![](png/wikibase/request-account_log-in-page.png)
 
-7. All done, you are now logged in to your personal account.
+7. All done; you are now logged in to your account.
 
 ![](png/wikibase/request-account_logged-in.png)
-
 
 
 
