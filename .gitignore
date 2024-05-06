@@ -43,6 +43,8 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
+# MacOS default files
+.DS_Store
 
 # translation temp files
 po/*~
